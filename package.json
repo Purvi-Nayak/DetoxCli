@@ -7,7 +7,11 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "detox:android-debug": "detox test --configuration android.emu.debug",
+    "detox:android-release": "detox test --configuration android.emu.release",
+    "detox:build-android": "detox build --configuration android.emu.debug",
+    "detox:build-android-release": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release -x lintVitalRelease -x lintVitalReportRelease"
   },
   "dependencies": {
     "@react-native/new-app-screen": "0.80.2",
