@@ -1,0 +1,262 @@
+import { StyleSheet } from 'react-native';
+import { scale } from 'react-native-size-matters';
+import { COLORS } from '../../../utils/color';
+
+export const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: COLORS.white,
+  },
+  header: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingHorizontal: scale(20),
+    paddingVertical: scale(15),
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.grayLight,
+    backgroundColor: COLORS.white,
+  },
+  backButton: {
+    padding: scale(8),
+  },
+  backButtonText: {
+    fontSize: scale(16),
+    color: COLORS.primary,
+    fontWeight: '600',
+  },
+  title: {
+    fontSize: scale(20),
+    fontWeight: 'bold',
+    color: COLORS.black,
+  },
+  placeholder: {
+    width: scale(60),
+  },
+  content: {
+    flexGrow: 1,
+    padding: scale(20),
+  },
+  profileHeader: {
+    alignItems: 'center',
+    marginBottom: scale(30),
+    paddingVertical: scale(20),
+  },
+  avatar: {
+    width: scale(80),
+    height: scale(80),
+    borderRadius: scale(40),
+    backgroundColor: COLORS.primary,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: scale(15),
+  },
+  avatarText: {
+    fontSize: scale(32),
+    color: COLORS.white,
+    fontWeight: 'bold',
+  },
+  userName: {
+    fontSize: scale(24),
+    fontWeight: 'bold',
+    color: COLORS.black,
+    marginBottom: scale(5),
+  },
+  userEmail: {
+    fontSize: scale(16),
+    color: COLORS.grayDark,
+  },
+  section: {
+    backgroundColor: COLORS.white,
+    borderRadius: scale(12),
+    padding: scale(20),
+    marginBottom: scale(20),
+    shadowColor: COLORS.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: COLORS.grayLight,
+  },
+  sectionTitle: {
+    fontSize: scale(18),
+    fontWeight: '600',
+    color: COLORS.black,
+    marginBottom: scale(15),
+  },
+  infoRow: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: scale(12),
+    borderBottomWidth: 1,
+    borderBottomColor: COLORS.grayLight,
+  },
+  label: {
+    fontSize: scale(14),
+    color: COLORS.grayDark,
+    fontWeight: '500',
+  },
+  value: {
+    fontSize: scale(14),
+    color: COLORS.black,
+    fontWeight: '600',
+    flex: 1,
+    textAlign: 'right',
+  },
+  activeStatus: {
+    color: COLORS.success,
+  },
+  navButton: {
+    backgroundColor: COLORS.primary,
+    paddingVertical: scale(12),
+    paddingHorizontal: scale(20),
+    borderRadius: scale(8),
+    marginVertical: scale(8),
+    alignItems: 'center',
+  },
+  navButtonText: {
+    color: COLORS.white,
+    fontSize: scale(16),
+    fontWeight: '500',
+  },
+  logoutSection: {
+    backgroundColor: COLORS.white,
+    borderRadius: scale(12),
+    padding: scale(20),
+    marginBottom: scale(20),
+    shadowColor: COLORS.black,
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+    borderWidth: 1,
+    borderColor: COLORS.grayLight,
+  },
+  logoutButton: {
+    backgroundColor: COLORS.error,
+    paddingVertical: scale(15),
+    paddingHorizontal: scale(30),
+    borderRadius: scale(8),
+    alignItems: 'center',
+    marginVertical: scale(10),
+  },
+  logoutButtonText: {
+    color: COLORS.white,
+    fontSize: scale(16),
+    fontWeight: '600',
+  },
+  logoutDescription: {
+    fontSize: scale(12),
+    color: COLORS.grayDark,
+    textAlign: 'center',
+    marginTop: scale(8),
+  },
+  // Profile edit styles
+  avatarContainer: {
+    position: 'relative',
+    marginBottom: scale(15),
+  },
+  avatarImage: {
+    width: scale(80),
+    height: scale(80),
+    borderRadius: scale(40),
+  },
+  editIconContainer: {
+    position: 'absolute',
+    bottom: 0,
+    right: 0,
+    backgroundColor: COLORS.primary,
+    borderRadius: scale(12),
+    width: scale(24),
+    height: scale(24),
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 2,
+    borderColor: COLORS.white,
+  },
+  editIcon: {
+    width: scale(12),
+    height: scale(12),
+    tintColor: COLORS.white,
+  },
+  userNameContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: scale(5),
+  },
+  editNameButton: {
+    marginLeft: scale(10),
+    padding: scale(5),
+  },
+  editNameIcon: {
+    width: scale(16),
+    height: scale(16),
+    tintColor: COLORS.primary,
+  },
+  // Modal styles
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  modalContainer: {
+    backgroundColor: COLORS.white,
+    borderRadius: scale(12),
+    padding: scale(25),
+    width: '90%',
+    maxWidth: scale(400),
+  },
+  modalTitle: {
+    fontSize: scale(20),
+    fontWeight: 'bold',
+    color: COLORS.black,
+    textAlign: 'center',
+    marginBottom: scale(20),
+  },
+  modalInput: {
+    borderWidth: 1,
+    borderColor: COLORS.grayLight,
+    borderRadius: scale(8),
+    paddingHorizontal: scale(15),
+    paddingVertical: scale(12),
+    fontSize: scale(16),
+    color: COLORS.black,
+    marginBottom: scale(20),
+  },
+  modalButtons: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  modalButton: {
+    flex: 1,
+    paddingVertical: scale(12),
+    borderRadius: scale(8),
+    alignItems: 'center',
+    marginHorizontal: scale(5),
+  },
+  cancelButton: {
+    backgroundColor: COLORS.grayLight,
+  },
+  saveButton: {
+    backgroundColor: COLORS.primary,
+  },
+  cancelButtonText: {
+    color: COLORS.black,
+    fontSize: scale(16),
+    fontWeight: '500',
+  },
+  saveButtonText: {
+    color: COLORS.white,
+    fontSize: scale(16),
+    fontWeight: '600',
+  },
+});

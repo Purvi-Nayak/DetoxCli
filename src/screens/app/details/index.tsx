@@ -1,0 +1,55 @@
+import React from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  ScrollView,
+  SafeAreaView,
+} from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { useSelector } from 'react-redux';
+import { RootState } from '../../../redux/store';
+import { styles } from './style';
+
+export type HomeStackParamList = {
+  Home: undefined;
+  Details: undefined;
+  Profile: undefined;
+};
+
+type DetailsScreenNavigationProp = StackNavigationProp<
+  HomeStackParamList,
+  'Details'
+>;
+
+const DetailsScreen: React.FC = () => {
+  const navigation = useNavigation<DetailsScreenNavigationProp>();
+  const { userData, token } = useSelector((state: RootState) => state.auth);
+
+  const goBack = () => {
+    navigation.goBack();
+  };
+
+  const navigateToProfile = () => {
+    navigation.navigate('Profile');
+  };
+
+  const navigateToHome = () => {
+    navigation.navigate('Home');
+  };
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+        <TouchableOpacity style={styles.backButton} onPress={goBack}>
+          <Text style={styles.backButtonText}>← Back</Text>
+        </TouchableOpacity>
+        <Text style={styles.title}>Details</Text>
+        <View style={styles.placeholder} />
+      </View>
+    </SafeAreaView>
+  );
+};
+
+export default DetailsScreen;

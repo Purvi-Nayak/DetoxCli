@@ -1,5 +1,9 @@
 export const COLORS = {
     primary: '#4169E1',
+    error: '#FF0000',
+    success: '#5bce5bff',
+    grayLight: '#D3D3D3',
+    grayDark: '#A9A9A9',
     black: '#000000',
     white: '#FFFFFF',
     hoverColor: '#F2EADF',
@@ -11,5 +15,11 @@ export const COLORS = {
     midnightBlue: '#191970',
     navyBlue: '#000080',
     seconary: '#00BFFF',
-   third: '#0076DF ',  
+    third: '#0076DF ',
+    gradientColors: {
+        gradientCreate: ["#ff4d8a", "#ff8a3d"],
+        gradientCreateAlt: ["#ff6b6b", "#d96a3b"],
+        gradientJoin: ["#6d3df0", "#3fa3ff"],
+    },
 };
+
