@@ -31,14 +31,6 @@ const DetailsScreen: React.FC = () => {
     navigation.goBack();
   };
 
-  const navigateToProfile = () => {
-    navigation.navigate('Profile');
-  };
-
-  const navigateToHome = () => {
-    navigation.navigate('Home');
-  };
-
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -48,6 +40,10 @@ const DetailsScreen: React.FC = () => {
         <Text style={styles.title}>Details</Text>
         <View style={styles.placeholder} />
       </View>
+
+      <ScrollView contentContainerStyle={styles.content}>
+        <Text style={styles.contentText}>User Details</Text>
+      </ScrollView>
     </SafeAreaView>
   );
 };

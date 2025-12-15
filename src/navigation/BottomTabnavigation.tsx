@@ -71,13 +71,27 @@ const TabBar: React.FC<BottomTabBarProps> = ({
           }
         };
 
+        // Get testID for the tab
+        const getTabTestID = () => {
+          switch (route.name) {
+            case 'Home':
+              return 'home-tab';
+            case 'Details':
+              return 'details-tab';
+            case 'Profile':
+              return 'profile-tab';
+            default:
+              return `${route.name.toLowerCase()}-tab`;
+          }
+        };
+
         return (
           <TouchableOpacity
             key={route.key}
             accessibilityRole="button"
             accessibilityState={isFocused ? { selected: true } : {}}
             accessibilityLabel={options.tabBarAccessibilityLabel}
-            testID={options.tabBarTestID as string | undefined}
+            testID={getTabTestID()}
             onPress={onPress}
             onLongPress={onLongPress}
             style={tabBarStyles.tabButton}

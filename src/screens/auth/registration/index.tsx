@@ -61,16 +61,16 @@ const RegistrationScreen: React.FC = () => {
 
       dispatch(registerSuccess({ userData }));
 
-      Alert.alert(
-        'Registration Successful!',
-        'Your account has been created. Please login to continue.',
-        [
-          {
-            text: 'Login Now',
-            onPress: () => navigation.navigate('Login' as never),
-          },
-        ],
-      );
+      // Alert.alert(
+      //   'Registration Successful!',
+      //   'Your account has been created. Please login to continue.',
+      //   [
+      //     {
+      //       text: 'Login Now',
+      //       onPress: () => navigation.navigate('Login' as never),
+      //     },
+      //   ],
+      // );
     } catch (err) {
       dispatch(setError('Registration failed. Please try again.'));
     } finally {
@@ -80,6 +80,7 @@ const RegistrationScreen: React.FC = () => {
 
   return (
     <KeyboardAvoidingView
+      testID="registration-root"
       style={styles.container}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}
     >
@@ -88,7 +89,9 @@ const RegistrationScreen: React.FC = () => {
         showsVerticalScrollIndicator={false}
       >
         <View style={styles.headerContainer}>
-          <Text style={styles.title}>Create Account</Text>
+          <Text testID="registration-screen-title" style={styles.title}>
+            Create Account
+          </Text>
           <Text style={styles.subtitle}>Sign up to get started</Text>
         </View>
 
@@ -110,6 +113,7 @@ const RegistrationScreen: React.FC = () => {
               <View style={styles.inputContainer}>
                 <Text style={styles.label}>Full Name</Text>
                 <TextInput
+                  testID="name-input"
                   style={[
                     styles.input,
                     touched.name && errors.name ? styles.inputError : null,
@@ -130,6 +134,7 @@ const RegistrationScreen: React.FC = () => {
               <View style={styles.inputContainer}>
                 <Text style={styles.label}>Email Address</Text>
                 <TextInput
+                  testID="email-input"
                   style={[
                     styles.input,
                     touched.email && errors.email ? styles.inputError : null,
@@ -152,6 +157,7 @@ const RegistrationScreen: React.FC = () => {
                 <Text style={styles.label}>Password</Text>
                 <View style={styles.passwordContainer}>
                   <TextInput
+                    testID="password-input"
                     style={[
                       styles.passwordInput,
                       touched.password && errors.password
@@ -187,6 +193,7 @@ const RegistrationScreen: React.FC = () => {
                 <Text style={styles.label}>Confirm Password</Text>
                 <View style={styles.passwordContainer}>
                   <TextInput
+                    testID="confirm-password-input"
                     style={[
                       styles.passwordInput,
                       touched.confirmPassword && errors.confirmPassword
@@ -226,6 +233,7 @@ const RegistrationScreen: React.FC = () => {
 
               {/* Register Button */}
               <TouchableOpacity
+                testID="register-button"
                 style={[styles.button, isLoading && styles.buttonDisabled]}
                 onPress={() => handleSubmit()}
                 disabled={isLoading}
@@ -239,6 +247,7 @@ const RegistrationScreen: React.FC = () => {
               <View style={styles.linkContainer}>
                 <Text style={styles.linkText}>Already have an account? </Text>
                 <TouchableOpacity
+                  testID="login-link"
                   onPress={() => navigation.navigate('Login' as never)}
                 >
                   <Text style={styles.linkButton}>Login here</Text>

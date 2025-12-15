@@ -95,14 +95,6 @@ const ProfileScreen: React.FC = () => {
     Alert.alert('Success', 'Profile updated successfully!');
   };
 
-  const navigateToDetails = () => {
-    navigation.navigate('Details');
-  };
-
-  const navigateToHome = () => {
-    navigation.navigate('Home');
-  };
-
   const goBack = () => {
     navigation.goBack();
   };
