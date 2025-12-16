@@ -6,18 +6,23 @@ describe('Validation Error Tests', () => {
     beforeEach(async () => {
         await device.reloadReactNative();
         await device.disableSynchronization();
-        console.log(' Waiting for app to load...');
+        console.log('⏳ Waiting for app to load...');
         await new Promise(resolve => setTimeout(resolve, 3000));
         await device.enableSynchronization();
 
         await waitFor(element(by.id('login-root')))
             .toBeVisible()
             .withTimeout(10000);
-        console.log(' Login screen ready');
+        console.log('✅ Login screen ready');
+    });
+
+    afterEach(async () => {
+        // 📸 Take screenshot after each test for CI artifacts (same pattern as login.e2e.js)
+        await device.takeScreenshot('validation-test-screenshot');
     });
 
     it('should show "Email is required" when email field is empty', async () => {
-        console.log(' Testing empty email field validation...');
+        console.log('🔍 Testing empty email field validation...');
 
         // Leave email empty, enter password only
         await element(by.id('password-input')).tap();

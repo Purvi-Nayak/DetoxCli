@@ -7,7 +7,19 @@ module.exports = {
   maxWorkers: 1,
   globalSetup: 'detox/runners/jest/globalSetup',
   globalTeardown: 'detox/runners/jest/globalTeardown',
-  reporters: ['detox/runners/jest/reporter'],
+  reporters: [
+    'detox/runners/jest/reporter',
+    ['jest-junit', {
+      outputDirectory: './artifacts',
+      outputName: 'test-results.xml',
+      ancestorSeparator: ' › ',
+      uniqueOutputName: false,
+      suiteNameTemplate: '{filepath}',
+      classNameTemplate: '{classname}',
+      titleTemplate: '{title}'
+    }]
+  ],
   testEnvironment: 'detox/runners/jest/testEnvironment',
   verbose: true,
+  setupFilesAfterEnv: ['<rootDir>/e2e/setup.js'],
 };

@@ -38,11 +38,16 @@ describe('Navigation Between Core Screens', () => {
             .toBeVisible()
             .withTimeout(15000);
 
-        console.log(' Successfully logged in and on Home tab - READY FOR ALL NAVIGATION TESTS');
+        console.log('✅ Successfully logged in and on Home tab - READY FOR ALL NAVIGATION TESTS');
+    });
+
+    afterEach(async () => {
+        // 📸 Take screenshot after each test for CI artifacts (same pattern as login.e2e.js)
+        await device.takeScreenshot('navigation-test-screenshot');
     });
 
     it('should navigate from Home to Details screen', async () => {
-        console.log(' Testing Home → Details navigation');
+        console.log('🧭 Testing Home → Details navigation');
 
         // Verify we're on Home screen first
         await expect(element(by.id('home-tab-root'))).toBeVisible();

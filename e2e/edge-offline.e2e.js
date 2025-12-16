@@ -15,6 +15,11 @@ describe('Edge Cases - Offline & Permission Interruptions', () => {
             .withTimeout(10000);
     });
 
+    afterEach(async () => {
+        // 📸 Take screenshot after each test for CI artifacts (same pattern as login.e2e.js)
+        await device.takeScreenshot('offline-test-screenshot');
+    });
+
     describe('Network Interruptions', () => {
         it('should handle offline login attempt', async () => {
             console.log('🌐 Testing offline login scenario...');

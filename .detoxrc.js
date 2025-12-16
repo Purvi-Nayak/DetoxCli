@@ -1,5 +1,34 @@
 /** @type {Detox.DetoxConfig} */
 module.exports = {
+  logger: {
+    level: 'info',
+  },
+  artifacts: {
+    rootDir: './artifacts',
+    plugins: {
+      log: {
+        enabled: true,
+        keepOnlyFailedTestsArtifacts: false,
+      },
+      screenshot: {
+        enabled: true,
+        shouldTakeAutomaticSnapshots: true,
+        keepOnlyFailedTestsArtifacts: false,
+        takeWhen: {
+          testStart: false,
+          testDone: true,
+          testFailure: true,
+        },
+      },
+      video: {
+        enabled: false, // Keep disabled for CI performance
+      },
+      uiHierarchy: {
+        enabled: true,
+        keepOnlyFailedTestsArtifacts: false,
+      },
+    },
+  },
   testRunner: {
     args: {
       '$0': 'jest',

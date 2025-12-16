@@ -166,9 +166,11 @@ jobs:
         with:
           name: test-logs-${{ matrix.api-level }}
           path: |
-            artifacts/**/*.log
-            artifacts/**/*.json
             artifacts/**/*.txt
+            artifacts/**/*.xml
+            artifacts/**/*.json
+            artifacts/**/detox*.log
+            artifacts/**/device*.log
           if-no-files-found: warn
           retention-days: 7
 

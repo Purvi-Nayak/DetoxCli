@@ -50,29 +50,40 @@ describe('Positive Flow - Profile Editing', () => {
             .withTimeout(5000);
     });
 
+    afterEach(async () => {
+        // 📸 Take screenshot after each test for CI artifacts (same pattern as login.e2e.js)
+        await device.takeScreenshot('profile-test-screenshot');
+    });
+
     it('should actually change name from John Doe to Purvi using inline editing', async () => {
-        console.log(' Testing inline name editing: John Doe → Purvi');
+        console.log('✏️ Testing inline name editing: John Doe → Purvi');
+
+        // Take screenshot to see current state
+        await device.takeScreenshot('profile-before-edit');
 
         // Verify current name is displayed using specific testID
         await expect(element(by.id('profile-user-name'))).toHaveText('John Doe');
-        console.log(' Current name "John Doe" confirmed');
+        console.log('✅ Current name "John Doe" confirmed');
 
-        // Quick Edit button should be visible right in the profile header (no scroll needed)
-        await expect(element(by.text('✏️ Quick Edit Name'))).toBeVisible();
-        console.log(' Quick Edit button found in profile header (no scroll needed)');
+        // Quick Edit button should be visible - FIXED: removed emoji from text
+        await expect(element(by.text(' Quick Edit Name'))).toBeVisible();
+        console.log('✅ Quick Edit button found in profile header');
 
         // Tap the inline edit button to enter edit mode
         await element(by.id('inline-edit-button')).tap();
-        console.log(' Tapped inline edit button');
+        console.log('🔘 Tapped inline edit button');
         await new Promise(resolve => setTimeout(resolve, 1000));
+
+        // Take screenshot to see edit mode
+        await device.takeScreenshot('profile-in-edit-mode');
 
         // Verify we're in edit mode - text input should be visible
         await expect(element(by.id('inline-name-input'))).toBeVisible();
-        console.log(' Inline text input is visible');
+        console.log('✅ Inline text input is visible');
 
         // Clear and enter new name "Purvi" using replaceText (more reliable than typeText)
         await element(by.id('inline-name-input')).replaceText('Purvi');
-        console.log(' Entered new name: Purvi');
+        console.log('📝 Entered new name: Purvi');
         await new Promise(resolve => setTimeout(resolve, 500));
 
         // Dismiss keyboard to ensure Save button is visible  
@@ -83,24 +94,30 @@ describe('Positive Flow - Profile Editing', () => {
 
         // Tap save button (should be easily accessible now)
         await element(by.id('inline-save-button')).tap();
-        console.log(' Tapped inline save button');
+        console.log('🔘 Tapped inline save button');
+
+        // Take screenshot after save
+        await device.takeScreenshot('profile-after-save');
 
         // Check if button text changed to "Clicked!" to verify onPress was called
         try {
-            await expect(element(by.text('Clicked!'))).toBeVisible();
-            console.log(' Save button onPress was called - button text changed to Clicked!');
+            await expect(element(by.text('✅ CLICKED!'))).toBeVisible();
+            console.log('✅ Save button onPress was called - button text changed to CLICKED!');
         } catch (error) {
-            console.log(' Save button onPress was NOT called - button text still shows Save');
+            console.log('⚠️ Save button onPress was NOT called - button text still shows Save');
         }
 
         // Wait longer for Redux state to propagate and component to re-render
         await new Promise(resolve => setTimeout(resolve, 3000));
 
+        // Take final screenshot
+        await device.takeScreenshot('profile-final-result');
+
         // Verify the name changed in the main profile header using testID
         await expect(element(by.id('profile-user-name'))).toHaveText('Purvi');
-        console.log(' Name "Purvi" confirmed in profile header');
+        console.log('✅ Name "Purvi" confirmed in profile header');
 
-        console.log(' SUCCESS: Name successfully changed from John Doe to Purvi!');
+        console.log('🎉 SUCCESS: Name successfully changed from John Doe to Purvi!');
     });
 
 });
