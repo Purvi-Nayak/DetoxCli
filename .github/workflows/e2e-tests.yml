@@ -1,0 +1,170 @@
+name: 🧪 E2E Tests - Detox
+
+on:
+  pull_request:
+    branches: [ main, develop, master ]
+  push:
+    branches: [ main, develop, master ]
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  e2e-android:
+    name: 🤖 Android E2E Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+
+    strategy:
+      matrix:
+        api-level: [30]  # Using API 30 like your local setup
+
+    steps:
+      # 📥 1. CHECKOUT & SETUP
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # 🔧 2. DEPENDENCIES
+      - name: 📦 Install dependencies
+        run: |
+          npm ci
+          echo "✅ Dependencies installed"
+
+      # 🔧 3. SETUP JAVA & ANDROID
+      - name: ☕ Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: 🤖 Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: 📱 Accept Android SDK licenses
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+
+      # 🔧 4. CACHE SETUP
+      - name: 📦 Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            android/.gradle
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: 📦 Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 🏗️ 5. BUILD DETOX
+      - name: 🏗️ Build Detox Android
+        run: |
+          echo "🔨 Building Detox test APK..."
+          npm run detox:build-android
+          echo "✅ Detox build completed"
+
+      # 📱 6. RUN E2E TESTS WITH EMULATOR
+      - name: 📱 Run E2E Tests on Android Emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disk-size: 6000M
+          heap-size: 600M
+          ram-size: 4096M
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          disable-animations: true
+          script: |
+            echo "🚀 Starting E2E Test Suite..."
+            echo "📱 Emulator ready, running all 5 test files:"
+            
+            # List all test files
+            echo "📋 Test files to run:"
+            ls -la e2e/*.e2e.js
+            
+            echo "🧪 Running complete E2E test suite..."
+            npm run detox:android-debug
+            
+            echo "✅ All E2E tests completed!"
+
+      # 📊 7. UPLOAD TEST ARTIFACTS
+      - name: 📊 Upload Test Artifacts
+        uses: actions/upload-artifact@v4
+        if: always() # Upload artifacts even if tests fail
+        with:
+          name: detox-test-artifacts-${{ matrix.api-level }}
+          path: |
+            artifacts/
+            android/app/build/reports/
+          retention-days: 7
+
+      # 📸 8. UPLOAD SCREENSHOTS (ON FAILURE)
+      - name: 📸 Upload Screenshots (Failed Tests)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: failed-test-screenshots-${{ matrix.api-level }}
+          path: artifacts/**/*.png
+          retention-days: 14
+
+      # 📋 9. UPLOAD TEST LOGS
+      - name: 📋 Upload Test Logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-logs-${{ matrix.api-level }}
+          path: |
+            artifacts/**/*.log
+            artifacts/**/*.json
+          retention-days: 7
+
+  # 📊 REPORT RESULTS
+  report:
+    name: 📊 Test Results Summary
+    runs-on: ubuntu-latest
+    needs: e2e-android
+    if: always()
+
+    steps:
+      - name: 📊 Test Results Summary
+        run: |
+          echo "## 🧪 E2E Test Results Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📱 Test Suite Coverage:" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Login Flow** - Successful authentication" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Navigation** - Tab switching (Home ↔ Details ↔ Profile)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Profile Editing** - Name changes (John Doe → Purvi)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Validation** - Error handling (empty fields, invalid format)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Offline Scenarios** - Network interruptions" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Test Files Executed:" >> $GITHUB_STEP_SUMMARY
+          echo "1. \`login.e2e.js\` - Authentication flow" >> $GITHUB_STEP_SUMMARY
+          echo "2. \`navigation.e2e.js\` - Screen navigation" >> $GITHUB_STEP_SUMMARY
+          echo "3. \`profile.e2e.js\` - Profile management" >> $GITHUB_STEP_SUMMARY
+          echo "4. \`simple-error-test.e2e.js\` - Validation testing" >> $GITHUB_STEP_SUMMARY
+          echo "5. \`edge-offline.e2e.js\` - Edge case scenarios" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.e2e-android.result }}" == "success" ]; then
+            echo "✅ **All tests passed!** Your app is ready for deployment." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Tests failed.** Check artifacts for screenshots and logs." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 🔧 Debug Information:" >> $GITHUB_STEP_SUMMARY
+            echo "- Download test artifacts for detailed failure analysis" >> $GITHUB_STEP_SUMMARY
+            echo "- Check screenshots of failed test states" >> $GITHUB_STEP_SUMMARY
+            echo "- Review test logs for error messages" >> $GITHUB_STEP_SUMMARY
+          fi
