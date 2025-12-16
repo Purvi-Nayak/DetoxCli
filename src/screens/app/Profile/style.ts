@@ -259,4 +259,83 @@ export const styles = StyleSheet.create({
     fontSize: scale(16),
     fontWeight: '600',
   },
+  // Inline editing styles
+  inlineDisplayContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: scale(10),
+  },
+  inlineNameDisplay: {
+    flex: 1,
+    fontSize: scale(16),
+    color: COLORS.black,
+    fontWeight: '500',
+  },
+  inlineEditButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: scale(15),
+    paddingVertical: scale(8),
+    borderRadius: scale(6),
+    marginLeft: scale(10),
+  },
+  inlineEditButtonText: {
+    color: COLORS.white,
+    fontSize: scale(14),
+    fontWeight: '600',
+  },
+  inlineEditContainer: {
+    paddingVertical: scale(5),
+  },
+  inlineTextInput: {
+    borderWidth: 1,
+    borderColor: COLORS.grayLight,
+    borderRadius: scale(8),
+    paddingHorizontal: scale(12),
+    paddingVertical: scale(8),
+    fontSize: scale(16),
+    color: COLORS.black,
+    marginBottom: scale(12),
+  },
+  inlineButtonContainer: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  inlineButton: {
+    paddingHorizontal: scale(15),
+    paddingVertical: scale(10),
+    borderRadius: scale(6),
+    minWidth: scale(80),
+    alignItems: 'center',
+    flex: 1,
+    marginHorizontal: scale(5),
+  },
+  inlineSaveButton: {
+    backgroundColor: COLORS.success || COLORS.primary,
+  },
+
+  inlineSaveButtonText: {
+    color: COLORS.white,
+    fontSize: scale(14),
+    fontWeight: '600',
+  },
+  inlineCancelButtonText: {
+    color: COLORS.black,
+    fontSize: scale(14),
+    fontWeight: '500',
+  },
+  // Quick edit button in profile header
+  quickEditButton: {
+    backgroundColor: COLORS.primary,
+    paddingHorizontal: scale(15),
+    paddingVertical: scale(8),
+    borderRadius: scale(6),
+    marginVertical: scale(10),
+    alignItems: 'center',
+  },
+  quickEditButtonText: {
+    color: COLORS.white,
+    fontSize: scale(14),
+    fontWeight: '600',
+  },
 });

@@ -1,110 +1,145 @@
-describe('Positive Flow - Navigation Between Core Screens', () => {
+describe('Navigation Between Core Screens', () => {
     beforeAll(async () => {
-        await device.launchApp();
-    });
+        await device.launchApp({ newInstance: true });
 
-    beforeEach(async () => {
-        await device.reloadReactNative();
+        // LOGIN ONCE FOR ALL TESTS - Use EXACT same approach as working login.e2e.js
+        await device.disableSynchronization();
+        console.log(' Waiting 3 seconds for PersistGate + Redux loading...');
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        await device.enableSynchronization();
 
-        // Login first to access main app
-        await waitFor(element(by.text('Welcome Back')))
+        // Wait for login screen (same as working test)
+        await waitFor(element(by.id('login-root')))
             .toBeVisible()
             .withTimeout(10000);
+        console.log(' Login screen ready');
 
-        await element(by.id('email-input')).typeText('john@gmail.com');
-        await element(by.id('password-input')).typeText('Password123!');
+        // Enter credentials (same pattern as working test)
+        console.log(' Entering login credentials...');
+        await element(by.id('email-input')).replaceText('john@gmail.com');
+
+        await element(by.id('password-input')).tap();
+        await element(by.id('password-input')).replaceText('Password123!');
+
+        // Dismiss keyboard (same as working test)
+        if (device.getPlatform() === 'android') {
+            await device.pressBack();
+        }
+
+        // Tap login button
         await element(by.id('login-button')).tap();
+        console.log(' Login button tapped, waiting for navigation...');
 
-        // Wait for home screen
-        await waitFor(element(by.text('Welcome Back!')))
+        // Wait longer like the working test does
+        await new Promise(resolve => setTimeout(resolve, 5000));
+
+        // Verify we reached home screen (same pattern)
+        await waitFor(element(by.id('home-tab-root')))
             .toBeVisible()
-            .withTimeout(10000);
+            .withTimeout(15000);
+
+        console.log(' Successfully logged in and on Home tab - READY FOR ALL NAVIGATION TESTS');
     });
 
     it('should navigate from Home to Details screen', async () => {
-        // Verify we're on Home screen
-        await expect(element(by.text('Welcome Back!'))).toBeVisible();
-        await expect(element(by.text('Statistics'))).toBeVisible();
+        console.log(' Testing Home → Details navigation');
+
+        // Verify we're on Home screen first
+        await expect(element(by.id('home-tab-root'))).toBeVisible();
+        console.log(' Confirmed on Home screen');
 
         // Navigate to Details tab
         await element(by.id('details-tab')).tap();
+        console.log(' Tapped Details tab');
 
-        // Verify Details screen content
-        await waitFor(element(by.text('App Details')))
-            .toBeVisible()
-            .withTimeout(5000);
+        // Give time for navigation
+        await new Promise(resolve => setTimeout(resolve, 1500));
 
-        await expect(element(by.text('Application Information'))).toBeVisible();
-        await expect(element(by.text('Version'))).toBeVisible();
+        // Verify Details screen content using testIDs
+        await expect(element(by.id('details-screen-root'))).toBeVisible();
+        await expect(element(by.id('details-title'))).toBeVisible();
+        console.log(' Successfully navigated to Details screen');
     });
 
     it('should navigate from Details to Profile screen', async () => {
-        // Navigate to Details first
+        console.log(' Testing Details → Profile navigation');
+
+        // First go to Details
         await element(by.id('details-tab')).tap();
-        await waitFor(element(by.text('App Details')))
-            .toBeVisible()
-            .withTimeout(5000);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        console.log(' On Details screen');
 
-        // Navigate to Profile tab
+        // Then go to Profile
         await element(by.id('profile-tab')).tap();
+        console.log(' Tapped Profile tab');
+        await new Promise(resolve => setTimeout(resolve, 1500));
 
-        // Verify Profile screen content
-        await waitFor(element(by.text('Profile')))
-            .toBeVisible()
-            .withTimeout(5000);
-
-        await expect(element(by.text('Account Information'))).toBeVisible();
-        await expect(element(by.text('John Doe'))).toBeVisible();
+        // Verify Profile screen content using testIDs
+        await expect(element(by.id('profile-screen-root'))).toBeVisible();
+        await expect(element(by.id('profile-title'))).toBeVisible();
+        await expect(element(by.id('profile-user-name'))).toBeVisible();
+        console.log(' Successfully navigated to Profile screen');
     });
 
     it('should navigate back to Home from Profile', async () => {
-        // Navigate to Profile
+        console.log(' Testing Profile → Home navigation');
+
+        // First go to Profile
         await element(by.id('profile-tab')).tap();
-        await waitFor(element(by.text('Profile')))
-            .toBeVisible()
-            .withTimeout(5000);
+        await new Promise(resolve => setTimeout(resolve, 1000));
+        console.log(' On Profile screen');
 
-        // Navigate back to Home
+        // Then back to Home
         await element(by.id('home-tab')).tap();
+        console.log(' Tapped Home tab');
+        await new Promise(resolve => setTimeout(resolve, 1000));
 
-        // Verify Home screen
-        await waitFor(element(by.text('Welcome Back!')))
-            .toBeVisible()
-            .withTimeout(5000);
-
-        await expect(element(by.text('Statistics'))).toBeVisible();
+        // Verify back on Home screen
+        await expect(element(by.id('home-tab-root'))).toBeVisible();
+        await expect(element(by.id('welcome-title'))).toBeVisible();
+        console.log(' Successfully navigated back to Home screen');
     });
 
-    it('should show active tab animation effects', async () => {
-        // Test tab switching with animation delays
+    it('should complete full navigation cycle', async () => {
+        console.log(' Testing complete navigation cycle');
+
+        // Home → Details → Profile → Home
         await element(by.id('details-tab')).tap();
         await new Promise(resolve => setTimeout(resolve, 1000));
+        await expect(element(by.id('details-title'))).toBeVisible();
+        console.log(' Switched to Details');
 
         await element(by.id('profile-tab')).tap();
         await new Promise(resolve => setTimeout(resolve, 1000));
+        await expect(element(by.id('profile-title'))).toBeVisible();
+        console.log(' Switched to Profile');
 
         await element(by.id('home-tab')).tap();
         await new Promise(resolve => setTimeout(resolve, 1000));
+        await expect(element(by.id('welcome-title'))).toBeVisible();
+        console.log(' Switched back to Home');
 
-        // Verify final state
-        await expect(element(by.text('Welcome Back!'))).toBeVisible();
+        console.log(' Navigation cycle completed successfully');
     });
 
-    it('should maintain bottom tab visibility across screens', async () => {
-        // Verify tabs are visible on Home
+    it('should maintain bottom tab visibility', async () => {
+        console.log(' Testing tab bar persistence');
+
+        // Check tabs are always visible
         await expect(element(by.id('home-tab'))).toBeVisible();
         await expect(element(by.id('details-tab'))).toBeVisible();
         await expect(element(by.id('profile-tab'))).toBeVisible();
+        console.log(' All tabs visible on Home');
 
-        // Navigate to Details
+        // Switch to Details and check again
         await element(by.id('details-tab')).tap();
-        await waitFor(element(by.text('App Details')))
-            .toBeVisible()
-            .withTimeout(5000);
+        await new Promise(resolve => setTimeout(resolve, 800));
 
-        // Verify tabs still visible
         await expect(element(by.id('home-tab'))).toBeVisible();
         await expect(element(by.id('details-tab'))).toBeVisible();
         await expect(element(by.id('profile-tab'))).toBeVisible();
+        console.log(' All tabs still visible on Details');
+
+        console.log(' Tab visibility test complete!');
     });
 });

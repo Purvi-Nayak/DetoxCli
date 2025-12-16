@@ -1,69 +1,83 @@
 describe('Edge Cases - Offline & Permission Interruptions', () => {
     beforeAll(async () => {
-        await device.launchApp();
+        await device.launchApp({ newInstance: true });
     });
 
     beforeEach(async () => {
         await device.reloadReactNative();
+        // Wait for PersistGate + Redux loading like working tests
+        await device.disableSynchronization();
+        await new Promise(resolve => setTimeout(resolve, 3000));
+        await device.enableSynchronization();
+
+        await waitFor(element(by.id('login-root')))
+            .toBeVisible()
+            .withTimeout(10000);
     });
 
     describe('Network Interruptions', () => {
         it('should handle offline login attempt', async () => {
-            // Disable network connectivity
+            console.log('🌐 Testing offline login scenario...');
+
+            // 1. SIMULATE NETWORK OFF using Detox (emulator stays on, but network blocked)
             await device.setURLBlacklist(['.*']);
+            console.log('📱 Network requests blocked - simulating offline');
 
-            await waitFor(element(by.text('Welcome Back')))
-                .toBeVisible()
-                .withTimeout(10000);
+            // 2. ATTEMPT LOGIN WHILE "OFFLINE"
+            await element(by.id('email-input')).replaceText('john@gmail.com');
+            await element(by.id('password-input')).replaceText('Password123!');
+            console.log('📝 Credentials entered');
 
-            // Attempt login while offline
-            await element(by.id('email-input')).typeText('john@gmail.com');
-            await element(by.id('password-input')).typeText('Password123!');
             await element(by.id('login-button')).tap();
+            console.log('🔘 Login button tapped - should trigger network error');
 
-            // Verify network error message
-            await waitFor(element(by.text('Network Error')))
+            // 3. VERIFY NETWORK ERROR MESSAGE APPEARS (wait a bit for error processing)
+            await new Promise(resolve => setTimeout(resolve, 3000));
+
+            await waitFor(element(by.text('Network Error. Please check your internet connection and try again.')))
                 .toBeVisible()
                 .withTimeout(10000);
+            console.log('✅ Network error message displayed correctly');
 
-            // Or check for connection error
-            await expect(element(by.text('Please check your internet connection'))).toBeVisible();
-
-            // Re-enable network
+            // 4. RESTORE NETWORK
             await device.setURLBlacklist([]);
+            console.log('🌐 Network restored');
         });
 
         it('should handle network recovery and retry', async () => {
-            // Start offline
+            console.log('🔄 Testing network recovery scenario...');
+
+            // 1. START OFFLINE
             await device.setURLBlacklist(['.*']);
+            console.log('📱 Starting offline');
 
-            await waitFor(element(by.text('Welcome Back')))
-                .toBeVisible()
-                .withTimeout(10000);
-
-            // Try login offline (should fail)
-            await element(by.id('email-input')).typeText('john@gmail.com');
-            await element(by.id('password-input')).typeText('Password123!');
+            // 2. TRY LOGIN OFFLINE (should fail)
+            await element(by.id('email-input')).replaceText('john@gmail.com');
+            await element(by.id('password-input')).replaceText('Password123!');
             await element(by.id('login-button')).tap();
 
-            // Verify error appears
-            await waitFor(element(by.text('Network Error')))
+            // 3. VERIFY ERROR APPEARS
+            await waitFor(element(by.text('Network Error. Please check your internet connection and try again.')))
                 .toBeVisible()
-                .withTimeout(10000);
+                .withTimeout(5000);
+            console.log('✅ Network error appeared as expected');
 
-            // Restore network
+            // 4. RESTORE NETWORK
             await device.setURLBlacklist([]);
+            console.log('🌐 Network restored');
 
-            // Wait a moment for network to restore
+            // Wait a moment for network to stabilize
             await new Promise(resolve => setTimeout(resolve, 2000));
 
-            // Retry login (should succeed)
+            // 5. RETRY LOGIN (should succeed now)
             await element(by.id('login-button')).tap();
+            console.log('🔘 Retry login with network restored');
 
-            // Verify successful login
-            await waitFor(element(by.text('Welcome Back!')))
+            // 6. VERIFY SUCCESSFUL LOGIN
+            await waitFor(element(by.text('Home')))
                 .toBeVisible()
                 .withTimeout(10000);
+            console.log('✅ Login successful after network recovery');
         });
     });
 

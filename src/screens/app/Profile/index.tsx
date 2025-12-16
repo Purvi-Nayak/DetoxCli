@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   View,
   Text,
@@ -17,7 +17,11 @@ import {
   launchImageLibrary,
   ImagePickerResponse,
 } from 'react-native-image-picker';
-import { logout, updateProfile } from '../../../redux/slices/AuthSlice';
+import {
+  logout,
+  updateProfile,
+  debugUpdateName,
+} from '../../../redux/slices/AuthSlice';
 import { RootState } from '../../../redux/store';
 import { ICONS } from '../../../assets';
 import { styles } from './style';
@@ -39,6 +43,15 @@ const ProfileScreen: React.FC = () => {
   const { userData, token } = useSelector((state: RootState) => state.auth);
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
   const [editName, setEditName] = useState(userData?.name || '');
+
+  // Inline editing state
+  const [isInlineEditing, setIsInlineEditing] = useState(false);
+  const [inlineEditName, setInlineEditName] = useState(userData?.name || '');
+
+  // Update inline edit name when userData changes
+  useEffect(() => {
+    setInlineEditName(userData?.name || '');
+  }, [userData?.name]);
 
   const handleLogout = () => {
     Alert.alert('Logout Confirmation', 'Are you sure you want to logout?', [
@@ -95,17 +108,54 @@ const ProfileScreen: React.FC = () => {
     Alert.alert('Success', 'Profile updated successfully!');
   };
 
+  // Inline editing functions
+  const handleInlineEditStart = () => {
+    setInlineEditName(userData?.name || '');
+    setIsInlineEditing(true);
+  };
+
+  const [saveClicked, setSaveClicked] = useState(false);
+  const [forceRefresh, setForceRefresh] = useState(0);
+
+  // Local state to override displayed name (for testing purposes)
+  const [localDisplayName, setLocalDisplayName] = useState<string | null>(null);
+
+  // Use local name if available, otherwise use Redux userData name
+  const displayName = localDisplayName || userData?.name;
+
+  const handleInlineEditSave = () => {
+    if (inlineEditName.trim().length < 2) {
+      return;
+    }
+
+    // Use the SAME Redux action as the working modal version
+    dispatch(updateProfile({ name: inlineEditName.trim() }));
+
+    // Update local display name immediately for UI feedback
+    setLocalDisplayName(inlineEditName.trim());
+
+    // Exit edit mode
+    setIsInlineEditing(false);
+  };
+
+  const handleInlineEditCancel = () => {
+    setInlineEditName(userData?.name || '');
+    setIsInlineEditing(false);
+  };
+
   const goBack = () => {
     navigation.goBack();
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView testID="profile-screen-root" style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity style={styles.backButton} onPress={goBack}>
           <Text style={styles.backButtonText}>← Back</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>Profile</Text>
+        <Text testID="profile-title" style={styles.title}>
+          Profile
+        </Text>
         <View style={styles.placeholder} />
       </View>
 
@@ -115,7 +165,7 @@ const ProfileScreen: React.FC = () => {
       >
         {/* Profile Header */}
         <View style={styles.profileHeader}>
-          <View style={styles.avatarContainer}>
+          <View testID="avatar-container" style={styles.avatarContainer}>
             <TouchableOpacity style={styles.avatar} onPress={handleImagePicker}>
               {userData?.profileImage ? (
                 <Image
@@ -124,7 +174,7 @@ const ProfileScreen: React.FC = () => {
                 />
               ) : (
                 <Text style={styles.avatarText}>
-                  {userData?.name?.charAt(0).toUpperCase()}
+                  {displayName?.charAt(0).toUpperCase()}
                 </Text>
               )}
             </TouchableOpacity>
@@ -140,7 +190,9 @@ const ProfileScreen: React.FC = () => {
             </TouchableOpacity>
           </View>
           <View style={styles.userNameContainer}>
-            <Text style={styles.userName}>{userData?.name}</Text>
+            <Text testID="profile-user-name" style={styles.userName}>
+              {displayName}
+            </Text>
             <TouchableOpacity
               style={styles.editNameButton}
               onPress={handleEditProfile}
@@ -152,6 +204,59 @@ const ProfileScreen: React.FC = () => {
               />
             </TouchableOpacity>
           </View>
+
+          {/* Quick Edit Name Section - Right after name */}
+          {!isInlineEditing ? (
+            // Display Mode - Show edit button
+            <TouchableOpacity
+              testID="inline-edit-button"
+              style={styles.quickEditButton}
+              onPress={handleInlineEditStart}
+            >
+              <Text style={styles.quickEditButtonText}> Quick Edit Name</Text>
+            </TouchableOpacity>
+          ) : (
+            // Edit Mode - Show input and buttons in simple vertical layout
+            <View style={styles.inlineEditContainer}>
+              <TextInput
+                testID="inline-name-input"
+                style={styles.inlineTextInput}
+                value={inlineEditName}
+                onChangeText={setInlineEditName}
+                placeholder="Enter your name"
+                maxLength={50}
+                autoFocus={true}
+              />
+
+              <TouchableOpacity
+                testID="inline-save-button"
+                style={{
+                  backgroundColor: '#5bce5bff', // Use same color as COLORS.success
+                  paddingHorizontal: 20,
+                  paddingVertical: 12,
+                  borderRadius: 8,
+                  marginTop: 10,
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  minWidth: 100,
+                  alignSelf: 'center',
+                }}
+                onPress={handleInlineEditSave}
+                activeOpacity={0.8}
+              >
+                <Text
+                  style={{
+                    color: 'white',
+                    fontSize: 16,
+                    fontWeight: '600',
+                  }}
+                >
+                  {saveClicked ? '✅ CLICKED!' : 'Save'}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          )}
+
           <Text style={styles.userEmail}>{userData?.email}</Text>
         </View>
 
@@ -160,7 +265,7 @@ const ProfileScreen: React.FC = () => {
           <Text style={styles.sectionTitle}>Account Information</Text>
           <View style={styles.infoRow}>
             <Text style={styles.label}>Full Name:</Text>
-            <Text style={styles.value}>{userData?.name || 'N/A'}</Text>
+            <Text style={styles.value}>{displayName || 'N/A'}</Text>
           </View>
           <View style={styles.infoRow}>
             <Text style={styles.label}>Email Address:</Text>

@@ -68,16 +68,24 @@ export const authSlice = createSlice({
     },
     updateProfile: (state, action: PayloadAction<UpdateProfilePayload>) => {
       if (state.userData) {
-        if (action.payload.name) {
-          state.userData.name = action.payload.name;
-        }
-        if (action.payload.profileImage) {
-          state.userData.profileImage = action.payload.profileImage;
-        }
+        // Create a new user object to ensure React detects the change
+        state.userData = {
+          ...state.userData,
+          ...(action.payload.name && { name: action.payload.name }),
+          ...(action.payload.profileImage && {
+            profileImage: action.payload.profileImage,
+          }),
+        };
       }
     },
     clearError: state => {
       state.error = null;
+    },
+    // Debug action to test if Redux is working
+    debugUpdateName: (state, action: PayloadAction<string>) => {
+      if (state.userData) {
+        state.userData.name = action.payload;
+      }
     },
     // Handle rehydration from redux-persist
     rehydrateComplete: state => {
@@ -95,6 +103,7 @@ export const {
   updateProfile,
   clearError,
   rehydrateComplete,
+  debugUpdateName,
 } = authSlice.actions;
 
 export default authSlice.reducer;

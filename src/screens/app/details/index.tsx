@@ -32,17 +32,21 @@ const DetailsScreen: React.FC = () => {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView testID="details-screen-root" style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity style={styles.backButton} onPress={goBack}>
           <Text style={styles.backButtonText}>← Back</Text>
         </TouchableOpacity>
-        <Text style={styles.title}>Details</Text>
+        <Text testID="details-title" style={styles.title}>
+          Details
+        </Text>
         <View style={styles.placeholder} />
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
-        <Text style={styles.contentText}>User Details</Text>
+        <Text testID="details-content" style={styles.contentText}>
+          User Details
+        </Text>
       </ScrollView>
     </SafeAreaView>
   );
