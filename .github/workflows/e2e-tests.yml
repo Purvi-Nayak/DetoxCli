@@ -11,11 +11,12 @@ jobs:
   e2e-android:
     name: 🤖 Android E2E Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60  # Increased timeout for emulator issues
 
     strategy:
       matrix:
-        api-level: [30]  # Using API 30 like your local setup
+        api-level: [29]  # Using API 29 for better CI compatibility
+      fail-fast: false  # Continue even if one job fails
 
     steps:
       # 📥 1. CHECKOUT & SETUP
@@ -67,40 +68,76 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # 🏗️ 5. BUILD DETOX
+      # 🔧 5. PREPARE FOR EMULATOR
+      - name: 🔧 Prepare Emulator Environment
+        run: |
+          echo "🔧 Setting up emulator environment..."
+          
+          # Enable KVM for hardware acceleration (if available)
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          
+          # Increase file descriptor limits
+          ulimit -n 8192
+          
+          # Set Android environment variables
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> $GITHUB_ENV
+          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+          
+          # Pre-download emulator image
+          echo "📱 Pre-downloading emulator system image..."
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "system-images;android-29;google_apis;x86_64"
+          
+          echo "✅ Emulator environment prepared"
+
+      # 🏗️ 6. BUILD DETOX
       - name: 🏗️ Build Detox Android
         run: |
           echo "🔨 Building Detox test APK..."
           npm run detox:build-android
           echo "✅ Detox build completed"
 
-      # 📱 6. RUN E2E TESTS WITH EMULATOR
+      # 📱 7. RUN E2E TESTS WITH EMULATOR
       - name: 📱 Run E2E Tests on Android Emulator
         uses: reactivecircus/android-emulator-runner@v2
         with:
           api-level: ${{ matrix.api-level }}
           target: google_apis
           arch: x86_64
-          profile: pixel_6
-          disk-size: 6000M
-          heap-size: 600M
-          ram-size: 4096M
-          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          profile: Nexus_6  # Use Nexus_6 instead of pixel_6 for better CI compatibility
+          disk-size: 4000M  # Reduced disk size for faster startup
+          heap-size: 400M   # Reduced heap size
+          ram-size: 2048M   # Reduced RAM for faster emulator boot
+          cores: 2
+          sdcard-path-or-size: 100M
+          avd-name: test_emulator
+          force-avd-creation: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot -wipe-data
           disable-animations: true
+          enable-hw-keyboard: true
           script: |
             echo "🚀 Starting E2E Test Suite..."
             echo "📱 Emulator ready, running all 5 test files:"
             
-            # List all test files
+            # Wait for emulator to be fully ready
+            echo "⏳ Waiting for emulator to be fully ready..."
+            adb wait-for-device
+            adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
+            echo "✅ Emulator is fully booted and ready"
+            
+            # List all test files (exclude starter.test.js)
             echo "📋 Test files to run:"
-            ls -la e2e/*.e2e.js
+            ls -la e2e/*.e2e.js | grep -v starter.test.js
+            
+            # Give emulator extra time to stabilize
+            echo "⏳ Stabilizing emulator..."
+            sleep 10
             
             echo "🧪 Running complete E2E test suite..."
             npm run detox:android-debug
             
             echo "✅ All E2E tests completed!"
 
-      # 📊 7. UPLOAD TEST ARTIFACTS
+      # 📊 8. UPLOAD TEST ARTIFACTS
       - name: 📊 Upload Test Artifacts
         uses: actions/upload-artifact@v4
         if: always() # Upload artifacts even if tests fail
@@ -109,18 +146,20 @@ jobs:
           path: |
             artifacts/
             android/app/build/reports/
+          if-no-files-found: warn
           retention-days: 7
 
-      # 📸 8. UPLOAD SCREENSHOTS (ON FAILURE)
+      # 📸 9. UPLOAD SCREENSHOTS (ON FAILURE)
       - name: 📸 Upload Screenshots (Failed Tests)
         uses: actions/upload-artifact@v4
         if: failure()
         with:
           name: failed-test-screenshots-${{ matrix.api-level }}
           path: artifacts/**/*.png
+          if-no-files-found: warn
           retention-days: 14
 
-      # 📋 9. UPLOAD TEST LOGS
+      # 📋 10. UPLOAD TEST LOGS
       - name: 📋 Upload Test Logs
         uses: actions/upload-artifact@v4
         if: always()
@@ -129,6 +168,8 @@ jobs:
           path: |
             artifacts/**/*.log
             artifacts/**/*.json
+            artifacts/**/*.txt
+          if-no-files-found: warn
           retention-days: 7
 
   # 📊 REPORT RESULTS
