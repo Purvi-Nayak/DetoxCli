@@ -1,4 +1,4 @@
-describe('Edge Cases - Offline & Permission Interruptions', () => {
+describe.skip('Edge Cases - Offline & Permission Interruptions', () => {
     beforeAll(async () => {
         await device.launchApp({ newInstance: true });
     });

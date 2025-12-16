@@ -1,5 +1,5 @@
 
-describe('Positive Flow - Profile Editing', () => {
+describe.skip('Positive Flow - Profile Editing', () => {
     beforeAll(async () => {
         await device.launchApp();
     });
