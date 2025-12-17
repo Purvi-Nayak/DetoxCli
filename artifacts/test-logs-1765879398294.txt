@@ -1,0 +1,28 @@
+[LOG] 2025-12-16T10:03:18.294Z: 🚀 Test suite starting...
+[LOG] 2025-12-16T10:03:48.486Z:  Waiting 3 seconds for PersistGate + Redux loading...
+[LOG] 2025-12-16T10:03:56.601Z:  Login screen ready
+[LOG] 2025-12-16T10:03:56.601Z:  Entering login credentials...
+[LOG] 2025-12-16T10:04:12.642Z:  Login button tapped, waiting for navigation...
+[LOG] 2025-12-16T10:04:17.820Z: ✅ Successfully logged in and on Home tab - READY FOR ALL NAVIGATION TESTS
+[LOG] 2025-12-16T10:04:18.193Z: 🧭 Testing Home → Details navigation
+[LOG] 2025-12-16T10:04:18.386Z:  Confirmed on Home screen
+[LOG] 2025-12-16T10:04:22.713Z:  Tapped Details tab
+[LOG] 2025-12-16T10:04:24.272Z:  Successfully navigated to Details screen
+[LOG] 2025-12-16T10:04:35.617Z:  Testing Details → Profile navigation
+[LOG] 2025-12-16T10:04:40.200Z:  On Details screen
+[LOG] 2025-12-16T10:04:43.786Z:  Tapped Profile tab
+[LOG] 2025-12-16T10:04:45.354Z:  Successfully navigated to Profile screen
+[LOG] 2025-12-16T10:04:52.628Z:  Testing Profile → Home navigation
+[LOG] 2025-12-16T10:04:55.344Z:  On Profile screen
+[LOG] 2025-12-16T10:04:57.520Z:  Tapped Home tab
+[LOG] 2025-12-16T10:04:58.729Z:  Successfully navigated back to Home screen
+[LOG] 2025-12-16T10:05:01.360Z:  Testing complete navigation cycle
+[LOG] 2025-12-16T10:05:03.552Z:  Switched to Details
+[LOG] 2025-12-16T10:05:05.849Z:  Switched to Profile
+[LOG] 2025-12-16T10:05:07.694Z:  Switched back to Home
+[LOG] 2025-12-16T10:05:07.694Z:  Navigation cycle completed successfully
+[LOG] 2025-12-16T10:05:09.044Z:  Testing tab bar persistence
+[LOG] 2025-12-16T10:05:09.502Z:  All tabs visible on Home
+[LOG] 2025-12-16T10:05:11.280Z:  All tabs still visible on Details
+[LOG] 2025-12-16T10:05:11.281Z:  Tab visibility test complete!
+[LOG] 2025-12-16T10:05:14.135Z: 🏁 Test suite completed

@@ -1,4 +1,114 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# DetoxTest - React Native E2E Testing
+
+![E2E Tests](https://github.com/Purvi-Nnpm run ios
+
+# OR using Yarn
+
+yarn ios
+
+````
+
+If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
+
+This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+
+## 🧪 E2E Testing with Detox
+
+### **Running Tests Locally**
+
+```bash
+# Build the test APK
+npm run detox:build-android
+
+# Run all E2E tests
+npm run detox:android-debug
+
+# Run specific test file
+npx detox test --configuration android.emu.debug e2e/login.e2e.js
+npx detox test --configuration android.emu.debug e2e/navigation.e2e.js
+npx detox test --configuration android.emu.debug e2e/profile.e2e.js
+npx detox test --configuration android.emu.debug e2e/simple-error-test.e2e.js
+npx detox test --configuration android.emu.debug e2e/edge-offline.e2e.js
+````
+
+### **Test Suites Overview**
+
+#### 🔐 **Login Flow** (`login.e2e.js`)
+
+- Mock user authentication (john@gmail.com + Password123!)
+- Redux state management validation
+- Navigation to Home tab after login
+
+#### 🧭 **Navigation** (`navigation.e2e.js`)
+
+- Complete tab navigation cycle
+- Home → Details → Profile → Home
+- UI state persistence testing
+
+#### 👤 **Profile Editing** (`profile.e2e.js`)
+
+- Inline name editing (John Doe → Purvi)
+- Redux state updates
+- Real-time UI re-rendering
+
+#### ❌ **Error Validation** (`simple-error-test.e2e.js`)
+
+- Empty field validation ("Email is required")
+- Invalid format checking ("Please enter a valid email address")
+- Authentication errors ("User not found", "Invalid password")
+
+#### 📡 **Offline Scenarios** (`edge-offline.e2e.js`)
+
+- Network interruption simulation
+- App backgrounding during login
+- Device orientation changes
+- Performance stress testing
+
+### **CI/CD Integration**
+
+This project includes **automated E2E testing** with GitHub Actions:
+
+- ✅ **Automatic testing** on every pull request
+- ✅ **Comprehensive test coverage** (5 test suites)
+- ✅ **Screenshot capture** on test failures
+- ✅ **Artifact collection** for debugging
+- ✅ **Branch protection** with quality gates
+
+See [`CI_SETUP.md`](CI_SETUP.md) for complete CI/CD documentation.
+
+## Step 3: Modify your app
+
+Now that you have successfully run the app, let's make changes!
+
+Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+
+When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+
+- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).lows/🧪%20E2E%20Tests%20-%20Detox/badge.svg)
+  [![Detox](https://img.shields.io/badge/Tested%20with-Detox-green.svg)](https://github.com/wix/Detox)
+  [![React Native](https://img.shields.io/badge/React%20Native-0.80.2-blue.svg)](https://reactnative.dev)
+
+A comprehensive React Native project with **complete E2E testing setup** using Detox, featuring automated CI/CD with GitHub Actions.
+
+## 🧪 E2E Test Coverage
+
+This project includes **5 comprehensive test suites** covering all critical user flows:
+
+| Test Suite            | Coverage                                 | Status |
+| --------------------- | ---------------------------------------- | ------ |
+| **Login Flow**        | Authentication with mock users           | ✅     |
+| **Navigation**        | Tab switching (Home ↔ Details ↔ Profile) | ✅     |
+| **Profile Editing**   | Real state changes (John Doe → Purvi)    | ✅     |
+| **Error Validation**  | Form validation & error handling         | ✅     |
+| **Offline Scenarios** | Network interruptions & edge cases       | ✅     |
+
+### 🎯 **Automated Testing Features:**
+
+- ✅ **GitHub Actions CI/CD** - Every PR automatically tested
+- ✅ **Real User Scenarios** - Mock authentication with Redux
+- ✅ **Comprehensive Coverage** - Positive flows + edge cases
+- ✅ **Artifact Collection** - Screenshots, logs, and reports
+- ✅ **Network Simulation** - Offline testing without manual setup
 
 # Getting Started
 

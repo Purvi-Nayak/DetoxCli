@@ -1,0 +1,764 @@
+15:27:14.810 detox[23635] TRACE: [90mB[39m [33mlifecycle[39m node_modules/.bin/detox test --configuration android.emu.debug e2e/login.e2e.js
+  data: {
+    "id": "04d5baf4-6c25-00da-6330-f3d41429d423",
+    "detoxConfig": {
+      "configurationName": "android.emu.debug",
+      "apps": {
+        "default": {
+          "type": "android.apk",
+          "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+          "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
+          "reversePorts": [
+            8081
+          ]
+        }
+      },
+      "artifacts": {
+        "rootDir": "artifacts/android.emu.debug.2025-12-16 09-57-14Z",
+        "plugins": {
+          "log": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "screenshot": {
+            "enabled": true,
+            "shouldTakeAutomaticSnapshots": true,
+            "keepOnlyFailedTestsArtifacts": false,
+            "takeWhen": {
+              "testStart": false,
+              "testDone": true,
+              "testFailure": true
+            }
+          },
+          "video": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "instruments": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "uiHierarchy": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          }
+        },
+        "pathBuilder": "./artifacts"
+      },
+      "behavior": {
+        "init": {
+          "keepLockFile": false,
+          "reinstallApp": true,
+          "exposeGlobals": true
+        },
+        "cleanup": {
+          "shutdownDevice": false
+        },
+        "launchApp": "auto"
+      },
+      "cli": {
+        "configuration": "android.emu.debug",
+        "start": true
+      },
+      "commands": [
+        {
+          "appName": "default",
+          "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      ],
+      "device": {
+        "type": "android.emulator",
+        "device": {
+          "avdName": "Pixel_6_API_30"
+        }
+      },
+      "logger": {
+        "level": "debug",
+        "overrideConsole": true,
+        "options": {
+          "showLoggerName": true,
+          "showPid": true,
+          "showLevel": true,
+          "showMetadata": true,
+          "basepath": "/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src",
+          "prefixers": {},
+          "stringifiers": {},
+          "showPrefix": true
+        }
+      },
+      "testRunner": {
+        "retries": 0,
+        "forwardEnv": false,
+        "detached": false,
+        "bail": false,
+        "noRetryArgs": [
+          "shard"
+        ],
+        "jest": {
+          "setupTimeout": 120000,
+          "teardownTimeout": 30000,
+          "retryAfterCircusRetries": false,
+          "reportWorkerAssign": true
+        },
+        "args": {
+          "$0": "jest",
+          "_": [
+            "e2e/login.e2e.js"
+          ],
+          "config": "e2e/jest.config.js",
+          "--": []
+        }
+      },
+      "session": {
+        "autoStart": true,
+        "debugSynchronization": 10000
+      }
+    },
+    "detoxIPCServer": "primary-23635",
+    "testResults": [],
+    "testSessionIndex": 0,
+    "workersCount": 0
+  }
+  tid: 0
+  cwd: "/Users/ips-162/Documents/RearchT...
+15:27:14.825 detox[23635] TRACE: [90mi[39m [33mipc[39m Server path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + ipc.config.id /tmp/detox.primary-23635
+  tid: 0
+15:27:14.828 detox[23635] TRACE: [90mi[39m [33mipc[39m starting server on  /tmp/detox.primary-23635 
+  tid: 0
+15:27:14.828 detox[23635] TRACE: [90mi[39m [33mipc[39m starting TLS server false
+  tid: 0
+15:27:14.828 detox[23635] TRACE: [90mi[39m [33mipc[39m starting server as Unix || Windows Socket
+  tid: 0
+15:27:14.831 detox[23635] DEBUG: [90mi[39m [33mws-server[39m Detox server listening on localhost:52880...
+  tid: 0
+15:27:14.850 detox[23635] TRACE: [90mi[39m [33mlifecycle[39m Serialized the session state at: /private/var/folders/r0/j9yltjr10ysg22c7l5sx938r0000gn/T/04d5baf4-6c25-00da-6330-f3d41429d423.detox.json
+  tid: 0
+15:27:14.852 detox[23635] INFO:  [90mB[39m [33mlifecycle[39m jest --config e2e/jest.config.js e2e/login.e2e.js
+  tid: 0
+  env: {}
+15:27:16.705 detox[23636] TRACE: [90mi[39m [33mipc[39m Service path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + id 
+  tid: 0
+15:27:16.707 detox[23636] TRACE: [90mi[39m [33mipc[39m requested connection to  primary-23635 /tmp/detox.primary-23635
+  tid: 0
+15:27:16.707 detox[23636] TRACE: [90mi[39m [33mipc[39m Connecting client on Unix Socket : /tmp/detox.primary-23635
+  tid: 0
+15:27:16.708 detox[23635] TRACE: [90mi[39m [33mipc[39m ## socket connection to server detected ##
+  tid: 0
+15:27:16.708 detox[23636] TRACE: [90mi[39m [33mipc[39m retrying reset
+  tid: 0
+15:27:16.709 detox[23636] TRACE: [90mi[39m [33mipc[39m dispatching event to  primary-23635 /tmp/detox.primary-23635  :  registerContext , { id: 'secondary-23636' }
+  tid: 0
+15:27:16.710 detox[23635] TRACE: [90mi[39m [33mipc[39m received event of :  registerContext { id: 'secondary-23636' }
+  tid: 0
+15:27:16.710 detox[23635] TRACE: [90mi[39m [33mipc[39m dispatching event to socket  :  registerContextDone {
+  testResults: [],
+  testSessionIndex: 0,
+  unsafe_earlyTeardown: undefined
+}
+  tid: 0
+15:27:16.711 detox[23636] TRACE: [90mi[39m [33mipc[39m ## received events ##
+  tid: 0
+15:27:16.711 detox[23636] TRACE: [90mi[39m [33mipc[39m detected event registerContextDone { testResults: [], testSessionIndex: 0 }
+  tid: 0
+15:27:17.075 detox[23636] TRACE: [90mB[39m [33mlifecycle[39m e2e/login.e2e.js
+  tid: 0
+15:27:19.395 detox[23636] TRACE: [90mB[39m [33mlifecycle[39m set up environment
+  tid: 0
+15:27:19.398 detox[23636] TRACE: [90mi[39m [33mipc[39m dispatching event to  primary-23635 /tmp/detox.primary-23635  :  registerWorker , { workerId: 'w1' }
+  tid: 0
+15:27:19.400 detox[23635] TRACE: [90mi[39m [33mipc[39m received event of :  registerWorker { workerId: 'w1' }
+  tid: 0
+15:27:19.401 detox[23635] TRACE: [90mi[39m [33mipc[39m dispatching event to socket  :  registerWorkerDone { workersCount: 1 }
+  tid: 0
+15:27:19.401 detox[23635] TRACE: [90mi[39m [33mipc[39m broadcasting event to all known sockets listening to  /tmp/detox.primary-23635  :   sessionStateUpdate { workersCount: 1 }
+  tid: 0
+15:27:19.402 detox[23636] TRACE: [90mi[39m [33mipc[39m ## received events ##
+  tid: 0
+15:27:19.403 detox[23636] TRACE: [90mi[39m [33mipc[39m detected event registerWorkerDone { workersCount: 1 }
+  tid: 0
+15:27:19.403 detox[23636] TRACE: [90mi[39m [33mipc[39m detected event sessionStateUpdate { workersCount: 1 }
+  tid: 0
+15:27:20.155 detox[23635] DEBUG: [90mB[39m [33mws-server[39m connection :52880<->:52944
+  tid: 0
+  id: 52944
+15:27:20.157 detox[23636] TRACE: [90mi[39m [33mws-client[39m opened web socket to: ws://localhost:52880
+  tid: 0
+15:27:20.163 detox[23636] TRACE: [90mi[39m [33mws-client[39m send message
+  data: {"type":"login","params":{"sessionId":"9dcdcf31-09ce-172a-35ef-d14b3f2537f5","role":"tester"},"messageId":0}
+  tid: 0
+15:27:20.166 detox[23635] TRACE: [90mi[39m [33mws-server[39m get
+  data: {"type":"login","params":{"sessionId":"9dcdcf31-09ce-172a-35ef-d14b3f2537f5","role":"tester"},"messageId":0}
+  tid: 0
+  id: 52944
+15:27:20.176 detox[23635] TRACE: [90mi[39m [33mws-server[39m created session 9dcdcf31-09ce-172a-35ef-d14b3f2537f5
+  tid: 1
+15:27:20.177 detox[23635] TRACE: [90mi[39m [33mws-server[39m send
+  data: {
+    "type": "loginSuccess",
+    "params": {
+      "testerConnected": true,
+      "appConnected": false
+    },
+    "messageId": 0
+  }
+  tid: 0
+  id: 52944
+  trackingId: "tester"
+  sessionId: "9dcdcf31-09ce-172a-35ef-d1...
+  role: "tester"
+15:27:20.181 detox[23635] TRACE: [90mi[39m [33mws-server[39m tester joined session 9dcdcf31-09ce-172a-35ef-d14b3f2537f5
+  tid: 1
+15:27:20.183 detox[23636] TRACE: [90mi[39m [33mws-client[39m get message
+  data: {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+   
+  tid: 0
+15:27:20.204 detox[23636] TRACE: [90mE[39m [33mlifecycle[39m set up environment
+  error: Error: Cannot find module './artifacts'
+  Require stack:
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js
+  - /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js
+      at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)
+      at Function.resolve (node:internal/modules/helpers:145:19)
+      at resolveModuleFromPath (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js:2:38)
+      at ArtifactsManager._resolveArtifactsPathBuilder (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:48:21)
+      at new ArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:23:30)
+      at Android.createArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js:19:30)
+      at DetoxWorker.init (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js:150:54)
+      at init.next (<anonymous>)
+      at getNextResult (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/caf/src/caf.js:253:25)
+      at processTicksAndRejections (node:internal/process/task_queues:105:5)
+  tid: 0
+  success: false
+15:27:20.205 detox[23636] TRACE: [90mB[39m [33mlifecycle[39m tear down environment
+  tid: 0
+15:27:20.216 detox[23635] TRACE: [90mi[39m [33mws-server[39m tester exited session 9dcdcf31-09ce-172a-35ef-d14b3f2537f5
+  tid: 1
+15:27:20.216 detox[23635] DEBUG: [90mE[39m [33mws-server[39m connection :52880<->:52944
+  tid: 0
+  id: 52944
+  trackingId: "tester"
+  sessionId: "9dcdcf31-09ce-172a-35ef-d1...
+  role: "tester"
+15:27:20.216 detox[23636] TRACE: [90mE[39m [33mlifecycle[39m tear down environment
+  tid: 0
+15:27:20.216 detox[23636] TRACE: [90mE[39m [33mlifecycle[39m e2e/login.e2e.js
+  tid: 0
+  success: true
+15:27:20.293 detox[23636] TRACE: [90mi[39m [33mipc[39m dispatching event to  primary-23635 /tmp/detox.primary-23635  :  reportTestResults , {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 'MODULE_NOT_FOUND',
+        requireStack: [
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js'
+        ],
+        name: 'Error',
+        message: "Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js',
+        stack: "Error: Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js\n' +
+          '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+          '    at Function.resolve (node:internal/modules/helpers:145:19)\n' +
+          '    at resolveModuleFromPath (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js:2:38)\n' +
+          '    at ArtifactsManager._resolveArtifactsPathBuilder (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:48:21)\n' +
+          '    at new ArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:23:30)\n' +
+          '    at Android.createArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js:19:30)\n' +
+          '    at DetoxWorker.init (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js:150:54)\n' +
+          '    at init.next (<anonymous>)\n' +
+          '    at getNextResult (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/caf/src/caf.js:253:25)\n' +
+          '    at processTicksAndRejections (node:internal/process/task_queues:105:5)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+  tid: 0
+15:27:20.300 detox[23635] TRACE: [90mi[39m [33mipc[39m received event of :  reportTestResults {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 'MODULE_NOT_FOUND',
+        requireStack: [
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js'
+        ],
+        name: 'Error',
+        message: "Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js',
+        stack: "Error: Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js\n' +
+          '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+          '    at Function.resolve (node:internal/modules/helpers:145:19)\n' +
+          '    at resolveModuleFromPath (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js:2:38)\n' +
+          '    at ArtifactsManager._resolveArtifactsPathBuilder (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:48:21)\n' +
+          '    at new ArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:23:30)\n' +
+          '    at Android.createArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js:19:30)\n' +
+          '    at DetoxWorker.init (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js:150:54)\n' +
+          '    at init.next (<anonymous>)\n' +
+          '    at getNextResult (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/caf/src/caf.js:253:25)\n' +
+          '    at processTicksAndRejections (node:internal/process/task_queues:105:5)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+  tid: 0
+15:27:20.301 detox[23635] TRACE: [90mi[39m [33mipc[39m dispatching event to socket  :  reportTestResultsDone {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 'MODULE_NOT_FOUND',
+        requireStack: [
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js'
+        ],
+        name: 'Error',
+        message: "Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js',
+        stack: "Error: Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js\n' +
+          '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+          '    at Function.resolve (node:internal/modules/helpers:145:19)\n' +
+          '    at resolveModuleFromPath (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js:2:38)\n' +
+          '    at ArtifactsManager._resolveArtifactsPathBuilder (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:48:21)\n' +
+          '    at new ArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:23:30)\n' +
+          '    at Android.createArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js:19:30)\n' +
+          '    at DetoxWorker.init (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js:150:54)\n' +
+          '    at init.next (<anonymous>)\n' +
+          '    at getNextResult (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/caf/src/caf.js:253:25)\n' +
+          '    at processTicksAndRejections (node:internal/process/task_queues:105:5)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+  tid: 0
+15:27:20.312 detox[23635] TRACE: [90mi[39m [33mipc[39m broadcasting event to all known sockets listening to  /tmp/detox.primary-23635  :   sessionStateUpdate {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 'MODULE_NOT_FOUND',
+        requireStack: [
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js'
+        ],
+        name: 'Error',
+        message: "Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js',
+        stack: "Error: Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js\n' +
+          '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+          '    at Function.resolve (node:internal/modules/helpers:145:19)\n' +
+          '    at resolveModuleFromPath (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js:2:38)\n' +
+          '    at ArtifactsManager._resolveArtifactsPathBuilder (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:48:21)\n' +
+          '    at new ArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:23:30)\n' +
+          '    at Android.createArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js:19:30)\n' +
+          '    at DetoxWorker.init (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js:150:54)\n' +
+          '    at init.next (<anonymous>)\n' +
+          '    at getNextResult (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/caf/src/caf.js:253:25)\n' +
+          '    at processTicksAndRejections (node:internal/process/task_queues:105:5)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+  tid: 0
+15:27:20.315 detox[23636] TRACE: [90mi[39m [33mipc[39m ## received events ##
+  tid: 0
+15:27:20.317 detox[23636] TRACE: [90mi[39m [33mipc[39m detected event reportTestResultsDone {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 'MODULE_NOT_FOUND',
+        requireStack: [
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js',
+          '/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js'
+        ],
+        name: 'Error',
+        message: "Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js',
+        stack: "Error: Cannot find module './artifacts'\n" +
+          'Require stack:\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/environmentFactory.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/DetoxSecondaryContext.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/realms/secondary.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/internals.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/runners/jest/globalSetup.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/requireOrImportModule.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-util/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/FailedTestsInteractiveMode.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/plugins/FailedTestsInteractive.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/watch.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/cli/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/@jest/core/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/run.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/build/index.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest-cli/bin/jest.js\n' +
+          '- /Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/jest/bin/jest.js\n' +
+          '    at Function._resolveFilename (node:internal/modules/cjs/loader:1401:15)\n' +
+          '    at Function.resolve (node:internal/modules/helpers:145:19)\n' +
+          '    at resolveModuleFromPath (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/utils/resolveModuleFromPath.js:2:38)\n' +
+          '    at ArtifactsManager._resolveArtifactsPathBuilder (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:48:21)\n' +
+          '    at new ArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/ArtifactsManager.js:23:30)\n' +
+          '    at Android.createArtifactsManager (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/artifacts/factories/index.js:19:30)\n' +
+          '    at DetoxWorker.init (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src/DetoxWorker.js:150:54)\n' +
+          '    at init.next (<anonymous>)\n' +
+          '    at getNextResult (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/caf/src/caf.js:253:25)\n' +
+          '    at processTicksAndRejections (node:internal/process/task_queues:105:5)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+  tid: 0
+15:27:20.336 detox[23635] TRACE: [90mi[39m [33mipc[39m socket disconnected secondary-23636
+  tid: 0
+15:27:20.339 detox[23636] TRACE: [90mi[39m [33mipc[39m connection closed primary-23635 /tmp/detox.primary-23635 0 tries remaining of 0
+  tid: 0
+15:27:20.339 detox[23636] TRACE: [90mi[39m [33mipc[39m secondary-23636 exceeded connection rety amount of  or stopRetrying flag set.
+  tid: 0
+15:27:20.417 detox[23635] ERROR: [90mE[39m [33mlifecycle[39m Command failed with exit code = 1:
+jest --config e2e/jest.config.js e2e/login.e2e.js
+  tid: 0
+  success: false
+  code: 1
+  signal: null
+15:27:20.421 detox[23635] DEBUG: [90mi[39m [33mws-server[39m Detox server has been closed gracefully
+  tid: 0
+15:27:20.423 detox[23635] TRACE: [90mE[39m [33mlifecycle[39m node_modules/.bin/detox test --configuration android.emu.debug e2e/login.e2e.js
+  tid: 0

@@ -1,0 +1,76 @@
+name: 🎯 Individual Test Suite Runner
+
+on:
+  workflow_dispatch:
+    inputs:
+      test_file:
+        description: 'Choose test file to run'
+        required: true
+        default: 'all'
+        type: choice
+        options:
+        - all
+        - login.e2e.js
+        - navigation.e2e.js
+        - profile.e2e.js
+        - simple-error-test.e2e.js
+        - edge-offline.e2e.js
+
+jobs:
+  individual-test:
+    name: 🎯 Run Individual Test
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: 📦 Install dependencies
+        run: npm ci
+
+      - name: ☕ Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: 🤖 Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: 🏗️ Build Detox
+        run: npm run detox:build-android
+
+      - name: 🧪 Run Selected Test
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 30
+          target: google_apis
+          arch: x86_64
+          profile: pixel_6
+          disk-size: 4000M
+          heap-size: 400M
+          ram-size: 2048M
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
+          disable-animations: true
+          script: |
+            if [ "${{ github.event.inputs.test_file }}" == "all" ]; then
+              echo "🧪 Running ALL test files..."
+              npm run detox:android-debug
+            else
+              echo "🎯 Running specific test: ${{ github.event.inputs.test_file }}"
+              npx detox test --configuration android.emu.debug e2e/${{ github.event.inputs.test_file }}
+            fi
+
+      - name: 📊 Upload Test Results
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: individual-test-results
+          path: artifacts/

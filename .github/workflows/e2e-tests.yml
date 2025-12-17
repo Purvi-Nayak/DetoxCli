@@ -1,0 +1,213 @@
+name: 🧪 E2E Tests - Detox
+
+on:
+  pull_request:
+    branches: [ main, develop, master ]
+  push:
+    branches: [ main, develop, master ]
+  workflow_dispatch: # Manual trigger
+
+jobs:
+  e2e-android:
+    name: 🤖 Android E2E Tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 60  # Increased timeout for emulator issues
+
+    strategy:
+      matrix:
+        api-level: [29]  # Using API 29 for better CI compatibility
+      fail-fast: false  # Continue even if one job fails
+
+    steps:
+      # 📥 1. CHECKOUT & SETUP
+      - name: 📥 Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🔧 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      # 🔧 2. DEPENDENCIES
+      - name: 📦 Install dependencies
+        run: |
+          npm ci
+          echo "✅ Dependencies installed"
+
+      # 🔧 3. SETUP JAVA & ANDROID
+      - name: ☕ Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+
+      - name: 🤖 Setup Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: 📱 Accept Android SDK licenses
+        run: yes | $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager --licenses
+
+      # 🔧 4. CACHE SETUP
+      - name: 📦 Cache Gradle dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.gradle/caches
+            ~/.gradle/wrapper
+            android/.gradle
+          key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-
+
+      - name: 📦 Cache npm dependencies
+        uses: actions/cache@v4
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+
+      # 🔧 5. PREPARE FOR EMULATOR
+      - name: 🔧 Prepare Emulator Environment
+        run: |
+          echo "🔧 Setting up emulator environment..."
+          
+          # Enable KVM for hardware acceleration (if available)
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          
+          # Increase file descriptor limits
+          ulimit -n 8192
+          
+          # Set Android environment variables
+          echo "ANDROID_SDK_ROOT=$ANDROID_HOME" >> $GITHUB_ENV
+          echo "ANDROID_HOME=$ANDROID_HOME" >> $GITHUB_ENV
+          
+          # Pre-download emulator image
+          echo "📱 Pre-downloading emulator system image..."
+          $ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager "system-images;android-29;google_apis;x86_64"
+          
+          echo "✅ Emulator environment prepared"
+
+      # 🏗️ 6. BUILD DETOX
+      - name: 🏗️ Build Detox Android
+        run: |
+          echo "🔨 Building Detox test APK..."
+          npm run detox:build-android
+          echo "✅ Detox build completed"
+
+      # 📱 7. RUN E2E TESTS WITH EMULATOR
+      - name: 📱 Run E2E Tests on Android Emulator
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: ${{ matrix.api-level }}
+          target: google_apis
+          arch: x86_64
+          profile: Nexus_6  # Use Nexus_6 instead of pixel_6 for better CI compatibility
+          disk-size: 4000M  # Reduced disk size for faster startup
+          heap-size: 400M   # Reduced heap size
+          ram-size: 2048M   # Reduced RAM for faster emulator boot
+          cores: 2
+          sdcard-path-or-size: 100M
+          avd-name: test_emulator
+          force-avd-creation: false
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none -no-snapshot -wipe-data
+          disable-animations: true
+          enable-hw-keyboard: true
+          script: |
+            echo "🚀 Starting E2E Test Suite..."
+            echo "📱 Emulator ready, running all 5 test files:"
+            
+            # Wait for emulator to be fully ready
+            echo "⏳ Waiting for emulator to be fully ready..."
+            adb wait-for-device
+            adb shell 'while [[ -z $(getprop sys.boot_completed) ]]; do sleep 1; done;'
+            echo "✅ Emulator is fully booted and ready"
+            
+            # List all test files (exclude starter.test.js)
+            echo "📋 Test files to run:"
+            ls -la e2e/*.e2e.js | grep -v starter.test.js
+            
+            # Give emulator extra time to stabilize
+            echo "⏳ Stabilizing emulator..."
+            sleep 10
+            
+            echo "🧪 Running complete E2E test suite..."
+            npm run detox:android-debug
+            
+            echo "✅ All E2E tests completed!"
+
+      # 📊 8. UPLOAD TEST ARTIFACTS
+      - name: 📊 Upload Test Artifacts
+        uses: actions/upload-artifact@v4
+        if: always() # Upload artifacts even if tests fail
+        with:
+          name: detox-test-artifacts-${{ matrix.api-level }}
+          path: |
+            artifacts/
+            android/app/build/reports/
+          if-no-files-found: warn
+          retention-days: 7
+
+      # 📸 9. UPLOAD SCREENSHOTS (ON FAILURE)
+      - name: 📸 Upload Screenshots (Failed Tests)
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: failed-test-screenshots-${{ matrix.api-level }}
+          path: artifacts/**/*.png
+          if-no-files-found: warn
+          retention-days: 14
+
+      # 📋 10. UPLOAD TEST LOGS
+      - name: 📋 Upload Test Logs
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: test-logs-${{ matrix.api-level }}
+          path: |
+            artifacts/**/*.txt
+            artifacts/**/*.xml
+            artifacts/**/*.json
+            artifacts/**/detox*.log
+            artifacts/**/device*.log
+          if-no-files-found: warn
+          retention-days: 7
+
+  # 📊 REPORT RESULTS
+  report:
+    name: 📊 Test Results Summary
+    runs-on: ubuntu-latest
+    needs: e2e-android
+    if: always()
+
+    steps:
+      - name: 📊 Test Results Summary
+        run: |
+          echo "## 🧪 E2E Test Results Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 📱 Test Suite Coverage:" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Login Flow** - Successful authentication" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Navigation** - Tab switching (Home ↔ Details ↔ Profile)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Profile Editing** - Name changes (John Doe → Purvi)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Validation** - Error handling (empty fields, invalid format)" >> $GITHUB_STEP_SUMMARY
+          echo "- ✅ **Offline Scenarios** - Network interruptions" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🎯 Test Files Executed:" >> $GITHUB_STEP_SUMMARY
+          echo "1. \`login.e2e.js\` - Authentication flow" >> $GITHUB_STEP_SUMMARY
+          echo "2. \`navigation.e2e.js\` - Screen navigation" >> $GITHUB_STEP_SUMMARY
+          echo "3. \`profile.e2e.js\` - Profile management" >> $GITHUB_STEP_SUMMARY
+          echo "4. \`simple-error-test.e2e.js\` - Validation testing" >> $GITHUB_STEP_SUMMARY
+          echo "5. \`edge-offline.e2e.js\` - Edge case scenarios" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ "${{ needs.e2e-android.result }}" == "success" ]; then
+            echo "✅ **All tests passed!** Your app is ready for deployment." >> $GITHUB_STEP_SUMMARY
+          else
+            echo "❌ **Tests failed.** Check artifacts for screenshots and logs." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "### 🔧 Debug Information:" >> $GITHUB_STEP_SUMMARY
+            echo "- Download test artifacts for detailed failure analysis" >> $GITHUB_STEP_SUMMARY
+            echo "- Check screenshots of failed test states" >> $GITHUB_STEP_SUMMARY
+            echo "- Review test logs for error messages" >> $GITHUB_STEP_SUMMARY
+          fi
