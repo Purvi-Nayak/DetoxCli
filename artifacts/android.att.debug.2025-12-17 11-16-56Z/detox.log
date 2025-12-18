@@ -1,0 +1,840 @@
+16:46:56.277 detox[16499] [90mB[39m node_modules/.bin/detox test --configuration android.att.debug e2e/login.e2e.js
+  data: {
+    "id": "dbda769b-3722-3fdb-9aee-16e9a52c83e0",
+    "detoxConfig": {
+      "configurationName": "android.att.debug",
+      "apps": {
+        "default": {
+          "type": "android.apk",
+          "binaryPath": "android/app/build/outputs/apk/debug/app-debug.apk",
+          "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug",
+          "reversePorts": [
+            8081
+          ]
+        }
+      },
+      "artifacts": {
+        "rootDir": "artifacts/android.att.debug.2025-12-17 11-16-56Z",
+        "plugins": {
+          "log": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "screenshot": {
+            "enabled": true,
+            "shouldTakeAutomaticSnapshots": true,
+            "keepOnlyFailedTestsArtifacts": false,
+            "takeWhen": {
+              "testStart": false,
+              "testDone": true,
+              "testFailure": true
+            }
+          },
+          "video": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "instruments": {
+            "enabled": false,
+            "keepOnlyFailedTestsArtifacts": false
+          },
+          "uiHierarchy": {
+            "enabled": true,
+            "keepOnlyFailedTestsArtifacts": false
+          }
+        }
+      },
+      "behavior": {
+        "init": {
+          "keepLockFile": false,
+          "reinstallApp": true,
+          "exposeGlobals": true
+        },
+        "cleanup": {
+          "shutdownDevice": false
+        },
+        "launchApp": "auto"
+      },
+      "cli": {
+        "configuration": "android.att.debug",
+        "start": true
+      },
+      "commands": [
+        {
+          "appName": "default",
+          "build": "cd android && ./gradlew assembleDebug assembleAndroidTest -DtestBuildType=debug"
+        }
+      ],
+      "device": {
+        "type": "android.attached",
+        "device": {
+          "adbName": ".*"
+        }
+      },
+      "logger": {
+        "level": "info",
+        "overrideConsole": true,
+        "options": {
+          "showLoggerName": true,
+          "showPid": true,
+          "showLevel": false,
+          "showMetadata": false,
+          "basepath": "/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/detox/src",
+          "prefixers": {},
+          "stringifiers": {}
+        }
+      },
+      "testRunner": {
+        "retries": 0,
+        "forwardEnv": false,
+        "detached": false,
+        "bail": false,
+        "noRetryArgs": [
+          "shard"
+        ],
+        "jest": {
+          "setupTimeout": 120000,
+          "teardownTimeout": 30000,
+          "retryAfterCircusRetries": false,
+          "reportWorkerAssign": true
+        },
+        "args": {
+          "$0": "jest",
+          "_": [
+            "e2e/login.e2e.js"
+          ],
+          "config": "e2e/jest.config.js",
+          "--": []
+        }
+      },
+      "session": {
+        "autoStart": true,
+        "debugSynchronization": 10000
+      }
+    },
+    "detoxIPCServer": "primary-16499",
+    "testResults": [],
+    "testSessionIndex": 0,
+    "workersCount": 0
+  }
+16:46:56.292 detox[16499] [90mi[39m Server path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + ipc.config.id /tmp/detox.primary-16499
+16:46:56.295 detox[16499] [90mi[39m starting server on  /tmp/detox.primary-16499 
+16:46:56.295 detox[16499] [90mi[39m starting TLS server false
+16:46:56.295 detox[16499] [90mi[39m starting server as Unix || Windows Socket
+16:46:56.299 detox[16499] [90mi[39m Detox server listening on localhost:60621...
+16:46:56.309 detox[16499] [90mi[39m Serialized the session state at: /private/var/folders/r0/j9yltjr10ysg22c7l5sx938r0000gn/T/dbda769b-3722-3fdb-9aee-16e9a52c83e0.detox.json
+16:46:56.311 detox[16499] [90mB[39m jest --config e2e/jest.config.js e2e/login.e2e.js
+16:46:58.123 detox[16502] [90mi[39m Service path not specified, so defaulting to ipc.config.socketRoot + ipc.config.appspace + id 
+16:46:58.125 detox[16502] [90mi[39m requested connection to  primary-16499 /tmp/detox.primary-16499
+16:46:58.125 detox[16502] [90mi[39m Connecting client on Unix Socket : /tmp/detox.primary-16499
+16:46:58.126 detox[16499] [90mi[39m ## socket connection to server detected ##
+16:46:58.130 detox[16502] [90mi[39m retrying reset
+16:46:58.131 detox[16502] [90mi[39m dispatching event to  primary-16499 /tmp/detox.primary-16499  :  registerContext , { id: 'secondary-16502' }
+16:46:58.132 detox[16499] [90mi[39m received event of :  registerContext { id: 'secondary-16502' }
+16:46:58.132 detox[16499] [90mi[39m dispatching event to socket  :  registerContextDone {
+  testResults: [],
+  testSessionIndex: 0,
+  unsafe_earlyTeardown: undefined
+}
+16:46:58.133 detox[16502] [90mi[39m ## received events ##
+16:46:58.133 detox[16502] [90mi[39m detected event registerContextDone { testResults: [], testSessionIndex: 0 }
+16:46:58.733 detox[16502] [90mB[39m e2e/login.e2e.js
+16:46:59.739 detox[16502] [90mB[39m set up environment
+16:46:59.746 detox[16502] [90mi[39m dispatching event to  primary-16499 /tmp/detox.primary-16499  :  registerWorker , { workerId: 'w1' }
+16:46:59.747 detox[16499] [90mi[39m received event of :  registerWorker { workerId: 'w1' }
+16:46:59.748 detox[16499] [90mi[39m dispatching event to socket  :  registerWorkerDone { workersCount: 1 }
+16:46:59.748 detox[16499] [90mi[39m broadcasting event to all known sockets listening to  /tmp/detox.primary-16499  :   sessionStateUpdate { workersCount: 1 }
+16:46:59.749 detox[16502] [90mi[39m ## received events ##
+16:46:59.749 detox[16502] [90mi[39m detected event registerWorkerDone { workersCount: 1 }
+16:46:59.749 detox[16502] [90mi[39m detected event sessionStateUpdate { workersCount: 1 }
+16:47:00.333 detox[16499] [90mB[39m connection :60621<->:60669
+16:47:00.339 detox[16502] [90mi[39m opened web socket to: ws://localhost:60621
+16:47:00.342 detox[16502] [90mi[39m send message
+  data: {"type":"login","params":{"sessionId":"c4805bda-da8b-5d1f-70a1-8592bf1ed495","role":"tester"},"messageId":0}
+16:47:00.343 detox[16499] [90mi[39m get
+  data: {"type":"login","params":{"sessionId":"c4805bda-da8b-5d1f-70a1-8592bf1ed495","role":"tester"},"messageId":0}
+16:47:00.344 detox[16499] [90mi[39m created session c4805bda-da8b-5d1f-70a1-8592bf1ed495
+16:47:00.344 detox[16499] [90mi[39m send
+  data: {
+    "type": "loginSuccess",
+    "params": {
+      "testerConnected": true,
+      "appConnected": false
+    },
+    "messageId": 0
+  }
+16:47:00.345 detox[16499] [90mi[39m tester joined session c4805bda-da8b-5d1f-70a1-8592bf1ed495
+16:47:00.346 detox[16502] [90mi[39m get message
+  data: {"type":"loginSuccess","params":{"testerConnected":true,"appConnected":false},"messageId":0}
+   
+16:47:00.493 detox[16502] [90mi[39m dispatching event to  primary-16499 /tmp/detox.primary-16499  :  allocateDevice , {
+  deviceConfig: { type: 'android.attached', device: { adbName: '.*' } }
+}
+16:47:00.494 detox[16499] [90mi[39m received event of :  allocateDevice {
+  deviceConfig: { type: 'android.attached', device: { adbName: '.*' } }
+}
+16:47:00.551 detox[16499] [90mB[39m init
+  args: ()
+16:47:00.559 detox[16499] [90mE[39m init
+16:47:00.560 detox[16499] [90mB[39m allocate
+  data: {
+    "type": "android.attached",
+    "device": {
+      "adbName": ".*"
+    }
+  }
+16:47:00.561 detox[16499] [90mi[39m "/Users/ips-162/Library/Android/sdk/platform-tools/adb"  devices
+16:47:00.583 detox[16499] [90mi[39m List of devices attached
+d2e1d3970509	device
+adb-ZD22227Q7K-CkkoAw._adb-tls-connect._tcp	device
+
+
+16:47:00.585 detox[16499] [90mi[39m Found a matching & free device d2e1d3970509
+16:47:00.587 detox[16499] [90mi[39m settled on d2e1d3970509
+  data: {
+    "id": "d2e1d3970509",
+    "adbName": "d2e1d3970509"
+  }
+16:47:00.587 detox[16499] [90mE[39m allocate
+16:47:00.587 detox[16499] [90mB[39m post-allocate: d2e1d3970509
+  data: {
+    "id": "d2e1d3970509",
+    "adbName": "d2e1d3970509"
+  }
+16:47:00.587 detox[16499] [90mi[39m "/Users/ips-162/Library/Android/sdk/platform-tools/adb" -s d2e1d3970509 shell "getprop ro.build.version.sdk"
+16:47:00.657 detox[16499] [90mi[39m 33
+
+16:47:00.657 detox[16499] [90mi[39m "/Users/ips-162/Library/Android/sdk/platform-tools/adb" -s d2e1d3970509 shell "dumpsys power | grep \"^[ ]*m[UW].*=\""
+16:47:00.950 detox[16499] [90mi[39m   mWakefulness=Awake
+  mWakefulnessChanging=false
+  mWakeLockSummary=0x0
+  mWakeUpWhenPluggedOrUnpluggedConfig=true
+  mWakeUpWhenPluggedOrUnpluggedInTheaterModeConfig=false
+  mUserActivityTimeoutOverrideFromWindowManager=-1
+  mUserInactiveOverrideFromWindowManager=false
+  mUserId=0
+  mWakeLockSummary=0x0
+  mUserInteractionBackoffMillis=60000
+
+16:47:00.950 detox[16499] [90mE[39m post-allocate: d2e1d3970509
+16:47:00.951 detox[16499] [90mi[39m dispatching event to socket  :  allocateDeviceDone { deviceCookie: { id: 'd2e1d3970509', adbName: 'd2e1d3970509' } }
+16:47:00.951 detox[16502] [90mi[39m ## received events ##
+16:47:00.951 detox[16502] [90mi[39m detected event allocateDeviceDone { deviceCookie: { id: 'd2e1d3970509', adbName: 'd2e1d3970509' } }
+16:47:01.024 detox[16502] [90mB[39m onBootDevice
+  args: ({"deviceId":"d2e1d3970509"})
+16:47:01.025 detox[16502] [90mE[39m onBootDevice
+16:47:01.026 detox[16502] [90mB[39m installUtilBinaries
+  args: ()
+16:47:01.026 detox[16502] [90mE[39m installUtilBinaries
+16:47:01.026 detox[16502] [90mB[39m selectApp
+  args: ("default")
+16:47:01.029 detox[16502] [90mi[39m "/Users/ips-162/Library/Android/sdk/build-tools/36.1.0/aapt" dump badging "/Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk"
+16:47:01.176 detox[16502] [90mi[39m package: name='com.detoxtest' versionCode='1' versionName='1.0' platformBuildVersionName='15' platformBuildVersionCode='35' compileSdkVersion='35' compileSdkVersionCodename='15'
+sdkVersion:'24'
+targetSdkVersion:'35'
+uses-permission: name='android.permission.INTERNET'
+uses-permission: name='android.permission.SYSTEM_ALERT_WINDOW'
+uses-permission: name='com.detoxtest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION'
+application-label:'DetoxTest'
+application-label-af:'DetoxTest'
+application-label-am:'DetoxTest'
+application-label-ar:'DetoxTest'
+application-label-as:'DetoxTest'
+application-label-az:'DetoxTest'
+application-label-be:'DetoxTest'
+application-label-bg:'DetoxTest'
+application-label-bn:'DetoxTest'
+application-label-bs:'DetoxTest'
+application-label-ca:'DetoxTest'
+application-label-cs:'DetoxTest'
+application-label-da:'DetoxTest'
+application-label-de:'DetoxTest'
+application-label-el:'DetoxTest'
+application-label-en-AU:'DetoxTest'
+application-label-en-CA:'DetoxTest'
+application-label-en-GB:'DetoxTest'
+application-label-en-IN:'DetoxTest'
+application-label-en-XC:'DetoxTest'
+application-label-es:'DetoxTest'
+application-label-es-419:'DetoxTest'
+application-label-es-ES:'DetoxTest'
+application-label-es-US:'DetoxTest'
+application-label-et:'DetoxTest'
+application-label-eu:'DetoxTest'
+application-label-fa:'DetoxTest'
+application-label-fi:'DetoxTest'
+application-label-fr:'DetoxTest'
+application-label-fr-CA:'DetoxTest'
+application-label-gl:'DetoxTest'
+application-label-gu:'DetoxTest'
+application-label-hi:'DetoxTest'
+application-label-hr:'DetoxTest'
+application-label-hu:'DetoxTest'
+application-label-hy:'DetoxTest'
+application-label-in:'DetoxTest'
+application-label-is:'DetoxTest'
+application-label-it:'DetoxTest'
+application-label-iw:'DetoxTest'
+application-label-ja:'DetoxTest'
+application-label-ka:'DetoxTest'
+application-label-kk:'DetoxTest'
+application-label-km:'DetoxTest'
+application-label-kn:'DetoxTest'
+application-label-ko:'DetoxTest'
+application-label-ky:'DetoxTest'
+application-label-lo:'DetoxTest'
+application-label-lt:'DetoxTest'
+application-label-lv:'DetoxTest'
+application-label-mk:'DetoxTest'
+application-label-ml:'DetoxTest'
+application-label-mn:'DetoxTest'
+application-label-mr:'DetoxTest'
+application-label-ms:'DetoxTest'
+application-label-my:'DetoxTest'
+application-label-nb:'DetoxTest'
+application-label-ne:'DetoxTest'
+application-label-nl:'DetoxTest'
+application-label-or:'DetoxTest'
+application-label-pa:'DetoxTest'
+application-label-pl:'DetoxTest'
+application-label-pt:'DetoxTest'
+application-label-pt-BR:'DetoxTest'
+application-label-pt-PT:'DetoxTest'
+application-label-ro:'DetoxTest'
+application-label-ru:'DetoxTest'
+application-label-si:'DetoxTest'
+application-label-sk:'DetoxTest'
+application-label-sl:'DetoxTest'
+application-label-sq:'DetoxTest'
+application-label-sr:'DetoxTest'
+application-label-sr-Latn:'DetoxTest'
+application-label-sv:'DetoxTest'
+application-label-sw:'DetoxTest'
+application-label-ta:'DetoxTest'
+application-label-te:'DetoxTest'
+application-label-th:'DetoxTest'
+application-label-tl:'DetoxTest'
+application-label-tr:'DetoxTest'
+application-label-uk:'DetoxTest'
+application-label-ur:'DetoxTest'
+application-label-uz:'DetoxTest'
+application-label-vi:'DetoxTest'
+application-label-zh-CN:'DetoxTest'
+application-label-zh-HK:'DetoxTest'
+application-label-zh-TW:'DetoxTest'
+application-label-zu:'DetoxTest'
+application-icon-160:'res/mipmap-mdpi-v4/ic_launcher.png'
+application-icon-240:'res/mipmap-hdpi-v4/ic_launcher.png'
+application-icon-320:'res/mipmap-xhdpi-v4/ic_launcher.png'
+application-icon-480:'res/mipmap-xxhdpi-v4/ic_launcher.png'
+application-icon-640:'res/mipmap-xxxhdpi-v4/ic_launcher.png'
+application: label='DetoxTest' icon='res/mipmap-mdpi-v4/ic_launcher.png'
+application-debuggable
+launchable-activity: name='com.detoxtest.MainActivity'  label='DetoxTest' icon=''
+feature-group: label=''
+  uses-feature: name='android.hardware.faketouch'
+  uses-implied-feature: name='android.hardware.faketouch' reason='default feature for all apps'
+main
+other-activities
+other-receivers
+supports-screens: 'small' 'normal' 'large' 'xlarge'
+supports-any-density: 'true'
+locales: '--_--' 'af' 'am' 'ar' 'as' 'az' 'be' 'bg' 'bn' 'bs' 'ca' 'cs' 'da' 'de' 'el' 'en-AU' 'en-CA' 'en-GB' 'en-IN' 'en-XC' 'es' 'es-419' 'es-ES' 'es-US' 'et' 'eu' 'fa' 'fi' 'fr' 'fr-CA' 'gl' 'gu' 'hi' 'hr' 'hu' 'hy' 'in' 'is' 'it' 'iw' 'ja' 'ka' 'kk' 'km' 'kn' 'ko' 'ky' 'lo' 'lt' 'lv' 'mk' 'ml' 'mn' 'mr' 'ms' 'my' 'nb' 'ne' 'nl' 'or' 'pa' 'pl' 'pt' 'pt-BR' 'pt-PT' 'ro' 'ru' 'si' 'sk' 'sl' 'sq' 'sr' 'sr-Latn' 'sv' 'sw' 'ta' 'te' 'th' 'tl' 'tr' 'uk' 'ur' 'uz' 'vi' 'zh-CN' 'zh-HK' 'zh-TW' 'zu'
+densities: '160' '240' '320' '480' '640'
+native-code: 'arm64-v8a' 'armeabi-v7a' 'x86' 'x86_64'
+
+16:47:01.176 detox[16502] [90mE[39m selectApp
+16:47:01.176 detox[16502] [90mB[39m uninstallApp
+  args: ()
+16:47:01.176 detox[16502] [90mB[39m onBeforeUninstallApp
+  args: ({"deviceId":"d2e1d3970509","bundleId":"com.detoxtest"})
+16:47:01.177 detox[16502] [90mE[39m onBeforeUninstallApp
+16:47:01.177 detox[16502] [90mi[39m "/Users/ips-162/Library/Android/sdk/platform-tools/adb" -s d2e1d3970509 shell "pm list packages com.detoxtest"
+16:47:01.300 detox[16502] [90mi[39m 
+16:47:01.301 detox[16502] [90mi[39m "/Users/ips-162/Library/Android/sdk/platform-tools/adb" -s d2e1d3970509 shell "pm list packages com.detoxtest.test"
+16:47:01.402 detox[16502] [90mi[39m 
+16:47:01.403 detox[16502] [90mE[39m uninstallApp
+16:47:01.403 detox[16502] [90mB[39m selectApp
+  args: ("default")
+16:47:01.404 detox[16502] [90mB[39m terminateApp
+  args: ()
+16:47:01.404 detox[16502] [90mB[39m onBeforeTerminateApp
+  args: ({"deviceId":"d2e1d3970509","bundleId":"com.detoxtest"})
+16:47:01.404 detox[16502] [90mE[39m onBeforeTerminateApp
+16:47:01.404 detox[16502] [90mi[39m "/Users/ips-162/Library/Android/sdk/platform-tools/adb" -s d2e1d3970509 shell "am force-stop com.detoxtest"
+16:47:01.676 detox[16502] [90mi[39m 
+16:47:01.676 detox[16502] [90mB[39m onTerminateApp
+  args: ({"deviceId":"d2e1d3970509","bundleId":"com.detoxtest"})
+16:47:01.677 detox[16502] [90mE[39m onTerminateApp
+16:47:01.677 detox[16502] [90mE[39m terminateApp
+16:47:01.677 detox[16502] [90mE[39m selectApp
+16:47:01.677 detox[16502] [90mB[39m installApp
+  args: ()
+16:47:01.678 detox[16502] [90mi[39m "/Users/ips-162/Library/Android/sdk/build-tools/36.1.0/aapt" dump xmlstrings "/Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk" AndroidManifest.xml
+16:47:01.695 detox[16502] [90mi[39m String pool of 75 unique UTF-16 non-sorted strings, 75 entries and 0 styles using 3708 bytes:
+String #0: theme
+String #1: label
+String #2: icon
+String #3: name
+String #4: permission
+String #5: protectionLevel
+String #6: enabled
+String #7: debuggable
+String #8: exported
+String #9: authorities
+String #10: grantUriPermissions
+String #11: launchMode
+String #12: configChanges
+String #13: value
+String #14: resource
+String #15: minSdkVersion
+String #16: versionCode
+String #17: versionName
+String #18: windowSoftInputMode
+String #19: targetSdkVersion
+String #20: allowBackup
+String #21: supportsRtl
+String #22: extractNativeLibs
+String #23: usesCleartextTraffic
+String #24: directBootAware
+String #25: networkSecurityConfig
+String #26: roundIcon
+String #27: compileSdkVersion
+String #28: compileSdkVersionCodename
+String #29: appComponentFactory
+String #30: 1.0
+String #31: 15
+String #32: action
+String #33: activity
+String #34: android
+String #35: android.intent.action.MAIN
+String #36: android.intent.category.LAUNCHER
+String #37: android.permission.DUMP
+String #38: android.permission.INTERNET
+String #39: android.permission.SYSTEM_ALERT_WINDOW
+String #40: android.support.FILE_PROVIDER_PATHS
+String #41: androidx.core.app.CoreComponentFactory
+String #42: androidx.emoji2.text.EmojiCompatInitializer
+String #43: androidx.lifecycle.ProcessLifecycleInitializer
+String #44: androidx.profileinstaller.ProfileInstallReceiver
+String #45: androidx.profileinstaller.ProfileInstallerInitializer
+String #46: androidx.profileinstaller.action.BENCHMARK_OPERATION
+String #47: androidx.profileinstaller.action.INSTALL_PROFILE
+String #48: androidx.profileinstaller.action.SAVE_PROFILE
+String #49: androidx.profileinstaller.action.SKIP_FILE
+String #50: androidx.startup
+String #51: androidx.startup.InitializationProvider
+String #52: application
+String #53: category
+String #54: com.detoxtest
+String #55: com.detoxtest.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+String #56: com.detoxtest.MainActivity
+String #57: com.detoxtest.MainApplication
+String #58: com.detoxtest.androidx-startup
+String #59: com.detoxtest.imagepickerprovider
+String #60: com.facebook.react.devsupport.DevSettingsActivity
+String #61: com.facebook.soloader.enabled
+String #62: com.imagepicker.ImagePickerProvider
+String #63: http://schemas.android.com/apk/res/android
+String #64: intent-filter
+String #65: manifest
+String #66: meta-data
+String #67: package
+String #68: permission
+String #69: platformBuildVersionCode
+String #70: platformBuildVersionName
+String #71: provider
+String #72: receiver
+String #73: uses-permission
+String #74: uses-sdk
+
+16:47:01.696 detox[16502] [90mi[39m "/Users/ips-162/Library/Android/sdk/build-tools/36.1.0/aapt" dump xmlstrings "/Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/androidTest/debug/app-debug-androidTest.apk" AndroidManifest.xml
+16:47:01.727 detox[16502] [90mi[39m String pool of 43 unique UTF-16 non-sorted strings, 43 entries and 0 styles using 2104 bytes:
+String #0: theme
+String #1: label
+String #2: name
+String #3: debuggable
+String #4: exported
+String #5: priority
+String #6: targetPackage
+String #7: handleProfiling
+String #8: functionalTest
+String #9: minSdkVersion
+String #10: targetSdkVersion
+String #11: extractNativeLibs
+String #12: compileSdkVersion
+String #13: compileSdkVersionCodename
+String #14: 15
+String #15: Tests for com.detoxtest
+String #16: activity
+String #17: android
+String #18: android.intent.category.LAUNCHER
+String #19: android.permission.REORDER_TASKS
+String #20: android.test.runner
+String #21: androidx.test.core.app.InstrumentationActivityInvoker$BootstrapActivity
+String #22: androidx.test.core.app.InstrumentationActivityInvoker$EmptyActivity
+String #23: androidx.test.core.app.InstrumentationActivityInvoker$EmptyFloatingActivity
+String #24: androidx.test.orchestrator
+String #25: androidx.test.runner.AndroidJUnitRunner
+String #26: androidx.test.services
+String #27: application
+String #28: category
+String #29: com.detoxtest
+String #30: com.detoxtest.test
+String #31: com.google.android.apps.common.testing.services
+String #32: http://schemas.android.com/apk/res/android
+String #33: instrumentation
+String #34: intent-filter
+String #35: manifest
+String #36: package
+String #37: platformBuildVersionCode
+String #38: platformBuildVersionName
+String #39: queries
+String #40: uses-library
+String #41: uses-permission
+String #42: uses-sdk
+
+16:47:01.728 detox[16502] [90mi[39m "/Users/ips-162/Library/Android/sdk/platform-tools/adb" -s d2e1d3970509 shell "getprop ro.build.version.sdk"
+16:47:01.796 detox[16502] [90mi[39m 33
+
+16:47:01.798 detox[16502] [90mi[39m /Users/ips-162/Library/Android/sdk/platform-tools/adb -s d2e1d3970509 install -r -g -t /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk
+16:47:02.749 detox[16502] [90mi[39m Performing Streamed Install
+
+16:47:02.749 detox[16502] [90mi[39m adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: 
+Exception occurred while executing 'install':
+java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag
+	at com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)
+	at com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)
+	at com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)
+	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)
+	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManage
+
+16:47:02.752 detox[16502] [90mi[39m /Users/ips-162/Library/Android/sdk/platform-tools/adb -s d2e1d3970509 install -r -g -t /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk exited with code #1
+16:47:02.855 detox[16502] [90mi[39m adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: 
+Exception occurred while executing 'install':
+java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag
+	at com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)
+	at com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)
+	at com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)
+	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)
+	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManage
+
+16:47:02.859 detox[16502] [90mi[39m (Retry #1) /Users/ips-162/Library/Android/sdk/platform-tools/adb -s d2e1d3970509 install -r -g -t /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk
+16:47:03.095 detox[16502] [90mi[39m Performing Streamed Install
+
+16:47:03.096 detox[16502] [90mi[39m adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: 
+Exception occurred while executing 'install':
+java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag
+	at com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)
+	at com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)
+	at com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)
+	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)
+	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManage
+
+16:47:03.098 detox[16502] [90mi[39m /Users/ips-162/Library/Android/sdk/platform-tools/adb -s d2e1d3970509 install -r -g -t /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk exited with code #1
+16:47:03.202 detox[16502] [90mi[39m adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: 
+Exception occurred while executing 'install':
+java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag
+	at com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)
+	at com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)
+	at com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)
+	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)
+	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManage
+
+16:47:03.203 detox[16502] [90mi[39m (Retry #2) /Users/ips-162/Library/Android/sdk/platform-tools/adb -s d2e1d3970509 install -r -g -t /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk
+16:47:03.406 detox[16502] [90mi[39m Performing Streamed Install
+
+16:47:03.406 detox[16502] [90mi[39m adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: 
+Exception occurred while executing 'install':
+java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag
+	at com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)
+	at com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)
+	at com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)
+	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)
+	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManage
+
+16:47:03.407 detox[16502] [90mi[39m /Users/ips-162/Library/Android/sdk/platform-tools/adb -s d2e1d3970509 install -r -g -t /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk exited with code #1
+16:47:03.509 detox[16502] [90mi[39m adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: 
+Exception occurred while executing 'install':
+java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag
+	at com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)
+	at com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)
+	at com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)
+	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)
+	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManage
+
+16:47:03.510 detox[16502] [90mi[39m (Retry #3) /Users/ips-162/Library/Android/sdk/platform-tools/adb -s d2e1d3970509 install -r -g -t /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk
+16:47:03.691 detox[16502] [90mi[39m Performing Streamed Install
+
+16:47:03.691 detox[16502] [90mi[39m adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: 
+Exception occurred while executing 'install':
+java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag
+	at com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)
+	at com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)
+	at com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)
+	at com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)
+	at com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)
+	at com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)
+	at com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)
+	at android.os.ShellCommand.exec(ShellCommand.java:38)
+	at com.android.server.pm.PackageManage
+
+16:47:03.692 detox[16502] [90mi[39m /Users/ips-162/Library/Android/sdk/platform-tools/adb -s d2e1d3970509 install -r -g -t /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk exited with code #1
+16:47:03.695 detox[16502] [90mE[39m installApp
+  error: Error: Process exited with code 1
+      at ChildProcess.done (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/promisify-child-process/index.cjs:70:19)
+      at ChildProcess.emit (node:events:518:28)
+      at ChildProcess.emit (node:domain:489:12)
+      at maybeClose (node:internal/child_process:1101:16)
+      at Socket.<anonymous> (node:internal/child_process:456:11)
+      at Socket.emit (node:events:518:28)
+      at Socket.emit (node:domain:489:12)
+      at Pipe.<anonymous> (node:net:351:12)
+16:47:03.695 detox[16502] [90mE[39m set up environment
+  error: Error: Process exited with code 1
+      at ChildProcess.done (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/promisify-child-process/index.cjs:70:19)
+      at ChildProcess.emit (node:events:518:28)
+      at ChildProcess.emit (node:domain:489:12)
+      at maybeClose (node:internal/child_process:1101:16)
+      at Socket.<anonymous> (node:internal/child_process:456:11)
+      at Socket.emit (node:events:518:28)
+      at Socket.emit (node:domain:489:12)
+      at Pipe.<anonymous> (node:net:351:12)
+16:47:03.696 detox[16502] [90mB[39m tear down environment
+16:47:03.696 detox[16502] [90mB[39m onBeforeCleanup
+  args: ()
+16:47:03.703 detox[16502] [90mi[39m saving FileArtifact to: artifacts/android.att.debug.2025-12-17 11-16-56Z/detox_pid_16502.json.log { append: true }
+16:47:03.703 detox[16502] [90mi[39m saving FileArtifact to: artifacts/android.att.debug.2025-12-17 11-16-56Z/detox_pid_16502.log { append: true }
+16:47:03.703 detox[16502] [90mE[39m onBeforeCleanup
+16:47:03.718 detox[16502] [90mi[39m dispatching event to  primary-16499 /tmp/detox.primary-16499  :  deallocateDevice , { deviceCookie: { id: 'd2e1d3970509', adbName: 'd2e1d3970509' } }
+16:47:03.719 detox[16499] [90mi[39m received event of :  deallocateDevice { deviceCookie: { id: 'd2e1d3970509', adbName: 'd2e1d3970509' } }
+16:47:03.719 detox[16499] [90mB[39m free: d2e1d3970509
+  data: {}
+16:47:03.721 detox[16499] [90mE[39m free: d2e1d3970509
+16:47:03.721 detox[16499] [90mi[39m dispatching event to socket  :  deallocateDeviceDone {}
+16:47:03.722 detox[16499] [90mi[39m tester exited session c4805bda-da8b-5d1f-70a1-8592bf1ed495
+16:47:03.722 detox[16499] [90mE[39m connection :60621<->:60669
+16:47:03.723 detox[16502] [90mi[39m ## received events ##
+16:47:03.723 detox[16502] [90mi[39m detected event deallocateDeviceDone {}
+16:47:03.723 detox[16502] [90mE[39m tear down environment
+16:47:03.725 detox[16502] [90mE[39m e2e/login.e2e.js
+16:47:03.747 detox[16499] [90mi[39m received event of :  reportTestResults {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 1,
+        signal: null,
+        stdout: 'Performing Streamed Install\n',
+        stderr: 'adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: \n' +
+          "Exception occurred while executing 'install':\n" +
+          'java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)\n' +
+          '\tat com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)\n' +
+          '\tat android.os.ShellCommand.exec(ShellCommand.java:38)\n' +
+          '\tat com.android.server.pm.PackageManage\n',
+        name: 'Error',
+        message: 'Process exited with code 1',
+        stack: 'Error: Process exited with code 1\n' +
+          '    at ChildProcess.done (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/promisify-child-process/index.cjs:70:19)\n' +
+          '    at ChildProcess.emit (node:events:518:28)\n' +
+          '    at ChildProcess.emit (node:domain:489:12)\n' +
+          '    at maybeClose (node:internal/child_process:1101:16)\n' +
+          '    at Socket.<anonymous> (node:internal/child_process:456:11)\n' +
+          '    at Socket.emit (node:events:518:28)\n' +
+          '    at Socket.emit (node:domain:489:12)\n' +
+          '    at Pipe.<anonymous> (node:net:351:12)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+16:47:03.747 detox[16502] [90mi[39m dispatching event to  primary-16499 /tmp/detox.primary-16499  :  reportTestResults , {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 1,
+        signal: null,
+        stdout: 'Performing Streamed Install\n',
+        stderr: 'adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: \n' +
+          "Exception occurred while executing 'install':\n" +
+          'java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)\n' +
+          '\tat com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)\n' +
+          '\tat android.os.ShellCommand.exec(ShellCommand.java:38)\n' +
+          '\tat com.android.server.pm.PackageManage\n',
+        name: 'Error',
+        message: 'Process exited with code 1',
+        stack: 'Error: Process exited with code 1\n' +
+          '    at ChildProcess.done (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/promisify-child-process/index.cjs:70:19)\n' +
+          '    at ChildProcess.emit (node:events:518:28)\n' +
+          '    at ChildProcess.emit (node:domain:489:12)\n' +
+          '    at maybeClose (node:internal/child_process:1101:16)\n' +
+          '    at Socket.<anonymous> (node:internal/child_process:456:11)\n' +
+          '    at Socket.emit (node:events:518:28)\n' +
+          '    at Socket.emit (node:domain:489:12)\n' +
+          '    at Pipe.<anonymous> (node:net:351:12)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+16:47:03.751 detox[16499] [90mi[39m dispatching event to socket  :  reportTestResultsDone {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 1,
+        signal: null,
+        stdout: 'Performing Streamed Install\n',
+        stderr: 'adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: \n' +
+          "Exception occurred while executing 'install':\n" +
+          'java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)\n' +
+          '\tat com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)\n' +
+          '\tat android.os.ShellCommand.exec(ShellCommand.java:38)\n' +
+          '\tat com.android.server.pm.PackageManage\n',
+        name: 'Error',
+        message: 'Process exited with code 1',
+        stack: 'Error: Process exited with code 1\n' +
+          '    at ChildProcess.done (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/promisify-child-process/index.cjs:70:19)\n' +
+          '    at ChildProcess.emit (node:events:518:28)\n' +
+          '    at ChildProcess.emit (node:domain:489:12)\n' +
+          '    at maybeClose (node:internal/child_process:1101:16)\n' +
+          '    at Socket.<anonymous> (node:internal/child_process:456:11)\n' +
+          '    at Socket.emit (node:events:518:28)\n' +
+          '    at Socket.emit (node:domain:489:12)\n' +
+          '    at Pipe.<anonymous> (node:net:351:12)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+16:47:03.751 detox[16502] [90mi[39m ## received events ##
+16:47:03.752 detox[16499] [90mi[39m broadcasting event to all known sockets listening to  /tmp/detox.primary-16499  :   sessionStateUpdate {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 1,
+        signal: null,
+        stdout: 'Performing Streamed Install\n',
+        stderr: 'adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: \n' +
+          "Exception occurred while executing 'install':\n" +
+          'java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)\n' +
+          '\tat com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)\n' +
+          '\tat android.os.ShellCommand.exec(ShellCommand.java:38)\n' +
+          '\tat com.android.server.pm.PackageManage\n',
+        name: 'Error',
+        message: 'Process exited with code 1',
+        stack: 'Error: Process exited with code 1\n' +
+          '    at ChildProcess.done (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/promisify-child-process/index.cjs:70:19)\n' +
+          '    at ChildProcess.emit (node:events:518:28)\n' +
+          '    at ChildProcess.emit (node:domain:489:12)\n' +
+          '    at maybeClose (node:internal/child_process:1101:16)\n' +
+          '    at Socket.<anonymous> (node:internal/child_process:456:11)\n' +
+          '    at Socket.emit (node:events:518:28)\n' +
+          '    at Socket.emit (node:domain:489:12)\n' +
+          '    at Pipe.<anonymous> (node:net:351:12)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+16:47:03.752 detox[16502] [90mi[39m detected event reportTestResultsDone {
+  testResults: [
+    {
+      success: false,
+      testFilePath: '/Users/ips-162/Documents/RearchTopics/DetoxTest/e2e/login.e2e.js',
+      testExecError: {
+        code: 1,
+        signal: null,
+        stdout: 'Performing Streamed Install\n',
+        stderr: 'adb: failed to install /Users/ips-162/Documents/RearchTopics/DetoxTest/android/app/build/outputs/apk/debug/app-debug.apk: \n' +
+          "Exception occurred while executing 'install':\n" +
+          'java.lang.SecurityException: You need the android.permission.INSTALL_GRANT_RUNTIME_PERMISSIONS permission to use the PackageManager.INSTALL_GRANT_RUNTIME_PERMISSIONS flag\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSessionInternal(PackageInstallerService.java:804)\n' +
+          '\tat com.android.server.pm.PackageInstallerService.createSession(PackageInstallerService.java:624)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doCreateSession(PackageManagerShellCommand.java:3467)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.doRunInstall(PackageManagerShellCommand.java:1465)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.runInstall(PackageManagerShellCommand.java:1427)\n' +
+          '\tat com.android.server.pm.PackageManagerShellCommand.onCommand(PackageManagerShellCommand.java:221)\n' +
+          '\tat com.android.modules.utils.BasicShellCommandHandler.exec(BasicShellCommandHandler.java:97)\n' +
+          '\tat android.os.ShellCommand.exec(ShellCommand.java:38)\n' +
+          '\tat com.android.server.pm.PackageManage\n',
+        name: 'Error',
+        message: 'Process exited with code 1',
+        stack: 'Error: Process exited with code 1\n' +
+          '    at ChildProcess.done (/Users/ips-162/Documents/RearchTopics/DetoxTest/node_modules/promisify-child-process/index.cjs:70:19)\n' +
+          '    at ChildProcess.emit (node:events:518:28)\n' +
+          '    at ChildProcess.emit (node:domain:489:12)\n' +
+          '    at maybeClose (node:internal/child_process:1101:16)\n' +
+          '    at Socket.<anonymous> (node:internal/child_process:456:11)\n' +
+          '    at Socket.emit (node:events:518:28)\n' +
+          '    at Socket.emit (node:domain:489:12)\n' +
+          '    at Pipe.<anonymous> (node:net:351:12)'
+      },
+      isPermanentFailure: false
+    }
+  ]
+}
+16:47:03.759 detox[16502] [90mi[39m connection closed primary-16499 /tmp/detox.primary-16499 0 tries remaining of 0
+16:47:03.759 detox[16502] [90mi[39m secondary-16502 exceeded connection rety amount of  or stopRetrying flag set.
+16:47:03.760 detox[16499] [90mi[39m socket disconnected secondary-16502
+16:47:03.865 detox[16499] [90mE[39m Command failed with exit code = 1:
+jest --config e2e/jest.config.js e2e/login.e2e.js
+16:47:03.866 detox[16499] [90mB[39m cleanup
+  args: ()
+16:47:03.867 detox[16499] [90mE[39m cleanup
+16:47:03.867 detox[16499] [90mi[39m Detox server has been closed gracefully
+16:47:03.869 detox[16499] [90mE[39m node_modules/.bin/detox test --configuration android.att.debug e2e/login.e2e.js

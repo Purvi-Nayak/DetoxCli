@@ -1,0 +1,13 @@
+[LOG] 2025-12-17T11:51:21.705Z: 🚀 Test suite starting...
+[LOG] 2025-12-17T11:51:44.300Z: 🌐 Testing offline login scenario...
+[LOG] 2025-12-17T11:51:44.314Z: 📱 Network requests blocked - simulating offline
+[LOG] 2025-12-17T11:51:44.480Z: 📝 Credentials entered
+[LOG] 2025-12-17T11:51:45.623Z: 🔘 Login button tapped - should trigger network error
+[LOG] 2025-12-17T11:51:48.696Z: ✅ Network error message displayed correctly
+[LOG] 2025-12-17T11:51:48.711Z: 🌐 Network restored
+[LOG] 2025-12-17T11:51:59.394Z: 🔄 Testing network recovery scenario...
+[LOG] 2025-12-17T11:51:59.427Z: 📱 Starting offline
+[LOG] 2025-12-17T11:52:00.900Z: ✅ Network error appeared as expected
+[LOG] 2025-12-17T11:52:00.928Z: 🌐 Network restored
+[LOG] 2025-12-17T11:52:03.726Z: 🔘 Retry login with network restored
+[LOG] 2025-12-17T11:53:04.415Z: 🏁 Test suite completed

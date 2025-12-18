@@ -73,7 +73,7 @@ module.exports = {
     attached: {
       type: 'android.attached',
       device: {
-        adbName: '.*'
+        adbName: 'ZD22227Q7K'  // Specify your exact device
       }
     },
     emulator: {

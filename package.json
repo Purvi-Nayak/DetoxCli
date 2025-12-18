@@ -8,10 +8,20 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
+    
     "detox:android-debug": "detox test --configuration android.emu.debug",
     "detox:android-release": "detox test --configuration android.emu.release",
     "detox:build-android": "detox build --configuration android.emu.debug",
-    "detox:build-android-release": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release -x lintVitalRelease -x lintVitalReportRelease"
+    "detox:build-android-release": "cd android && ./gradlew assembleRelease assembleAndroidTest -DtestBuildType=release -x lintVitalRelease -x lintVitalReportRelease",
+    
+    "detox:device-debug": "detox test --configuration android.att.debug",
+    "detox:device-release": "detox test --configuration android.att.release", 
+    "detox:build-device": "detox build --configuration android.att.debug",
+    "detox:device:login": "detox test --configuration android.att.debug e2e/login.e2e.js",
+    "detox:device:navigation": "detox test --configuration android.att.debug e2e/navigation.e2e.js",
+    "detox:device:validation": "detox test --configuration android.att.debug e2e/simple-error-test.e2e.js",
+    "detox:device:profile": "detox test --configuration android.att.debug e2e/profile.e2e.js",
+    "detox:device:offline": "detox test --configuration android.att.debug e2e/edge-offline.e2e.js"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^2.2.0",

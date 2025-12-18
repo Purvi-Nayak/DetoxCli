@@ -1,0 +1,374 @@
+--------- beginning of main
+12-17 17:23:55.893 28071 28581 D DetoxWSClient: Received action 'reactNativeReload' (ID #-1000, params={})
+12-17 17:23:55.894 28071 28562 I DetoxDispatcher: Handling action 'reactNativeReload' (ID #-1000)...
+12-17 17:23:55.896 28071 28562 I DetoxRNExt: Reloading React Native
+12-17 17:23:55.896 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.timers.FabricTimersIdlingResource@60d1958]
+12-17 17:23:55.896 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.StabilizedIdlingResource@a2a6b96]
+12-17 17:23:55.896 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.uimodule.fabric.FabricUIManagerIdlingResources@e2c4cca]
+12-17 17:23:55.897 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.animations.AnimatedModuleIdlingResource@67e6e3b]
+12-17 17:23:55.897 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.network.NetworkIdlingResource@35ccab1]
+12-17 17:23:55.898 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask()
+12-17 17:23:55.898 28071 28699 W unknown:BridgelessReact: ReactHost{0}.raiseSoftException(getOrCreateReloadTask()): Detox
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: Unhandled SoftException
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException: raiseSoftException(getOrCreateReloadTask()): Detox
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1038)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1031)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.getOrCreateReloadTask(ReactHostImpl.java:1478)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.lambda$reload$5(ReactHostImpl.java:502)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.$r8$lambda$pnssLYpRgj-ac0gqivuqyD-9TKQ(Unknown Source:0)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl$$ExternalSyntheticLambda0.call(D8$$SyntheticClass:0)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.call$lambda$2(Task.kt:315)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.$r8$lambda$MFqd_-X5KhHmu0hvNE2Bec_4mJM(Unknown Source:0)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+12-17 17:23:55.898 28071 28699 E unknown:ReactHost: 	at java.lang.Thread.run(Thread.java:1119)
+12-17 17:23:55.898 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Resetting createReactInstance task ref
+12-17 17:23:55.898 28071 28071 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Starting React Native reload
+12-17 17:23:55.898 28071 28071 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Calling ReactContext.onHostPause()
+12-17 17:23:55.899 28071 28071 W unknown:BridgelessReact: ReactHost{0}.raiseSoftException(callWithExistingReactInstance(callFunctionOnModule("RCTDeviceEventEmitter", "emit"))): Execute: reactInstance is null. Dropping work.
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: Unhandled SoftException
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: com.facebook.react.bridge.ReactNoCrashSoftException: raiseSoftException(callWithExistingReactInstance(callFunctionOnModule("RCTDeviceEventEmitter", "emit"))): Execute: reactInstance is null. Dropping work.
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1038)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.raiseSoftException(ReactHostImpl.java:1031)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.lambda$callWithExistingReactInstance$16(ReactHostImpl.java:1059)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.$r8$lambda$v_wsWn1AM15FUeMv5__nLvaLvTQ(Unknown Source:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl$$ExternalSyntheticLambda16.then(D8$$SyntheticClass:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.completeImmediately$lambda$3(Task.kt:356)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.$r8$lambda$b7MTC0ufkn_2TjF4BGcNqGR9qK0(Unknown Source:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion$$ExternalSyntheticLambda3.run(D8$$SyntheticClass:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Executors$ImmediateExecutor.execute(Executors.kt:41)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.completeImmediately(Task.kt:354)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.access$completeImmediately(Task.kt:250)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task.continueWith(Task.kt:132)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task.continueWith$default(Task.kt:117)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task.onSuccess$lambda$12(Task.kt:174)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task.$r8$lambda$l0wwo5AvbHxlwfI1R7CH_codxoo(Unknown Source:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$$ExternalSyntheticLambda2.then(D8$$SyntheticClass:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.completeAfterTask$lambda$5(Task.kt:390)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.$r8$lambda$IPpysnehFwANEiW061YzapkMdoE(Unknown Source:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion$$ExternalSyntheticLambda4.run(D8$$SyntheticClass:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Executors$ImmediateExecutor.execute(Executors.kt:41)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.completeAfterTask(Task.kt:388)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.access$completeAfterTask(Task.kt:250)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task.continueWithTask(Task.kt:156)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task.onSuccess(Task.kt:169)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.callWithExistingReactInstance(ReactHostImpl.java:1055)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.callFunctionOnModule(ReactHostImpl.java:912)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.BridgelessReactContext.emitDeviceEvent(BridgelessReactContext.kt:132)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.modules.appstate.AppStateModule.sendEvent(AppStateModule.kt:71)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.modules.appstate.AppStateModule.sendAppStateChangeEvent(AppStateModule.kt:75)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.modules.appstate.AppStateModule.onHostPause(AppStateModule.kt:48)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.bridge.ReactContext.onHostPause(ReactContext.java:302)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.lambda$getOrCreateReloadTask$29(ReactHostImpl.java:1507)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl.$r8$lambda$3_hO2W0xswhzVpHPxbwcWlR35dM(Unknown Source:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.ReactHostImpl$$ExternalSyntheticLambda9.then(D8$$SyntheticClass:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.completeAfterTask$lambda$5(Task.kt:390)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion.$r8$lambda$IPpysnehFwANEiW061YzapkMdoE(Unknown Source:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.facebook.react.runtime.internal.bolts.Task$Companion$$ExternalSyntheticLambda4.run(D8$$SyntheticClass:0)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at android.os.Handler.handleCallback(Handler.java:978)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at android.os.Handler.dispatchMessage(Handler.java:104)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at android.os.Looper.loopOnce(Looper.java:238)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at android.os.Looper.loop(Looper.java:357)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at android.app.ActivityThread.main(ActivityThread.java:8090)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at java.lang.reflect.Method.invoke(Native Method)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+12-17 17:23:55.899 28071 28071 E unknown:ReactHost: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1026)
+12-17 17:23:55.901 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Stopping all React Native surfaces
+12-17 17:23:55.901 28071 28699 E unknown:SurfaceMountingManager: Stopping surface [61]
+12-17 17:23:55.904 28071 28071 I ReactNative: [GESTURE HANDLER] Tearing down gesture handler registered for root view com.facebook.react.runtime.ReactSurfaceView{1faa882 V.E...... ........ 0,0-2225,1020 #3d}
+12-17 17:23:55.904 28071 28071 E unknown:SurfaceMountingManager: Surface [61] was stopped on SurfaceMountingManager.
+12-17 17:23:55.913 28071 28071 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Removing memory pressure listener
+12-17 17:23:55.913 28071 28071 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Resetting ReactContext ref
+12-17 17:23:55.913 28071 28071 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Destroying ReactContext
+12-17 17:23:55.913 28071 28071 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Calling DevSupportManager.onReactInstanceDestroyed(reactContext)
+12-17 17:23:55.913 28071 28071 W unknown:ReactNative: Packager connection already open, nooping.
+12-17 17:23:55.953 28071 28071 I com.detoxtest: Explicit concurrent copying GC freed 4732KB AllocSpace bytes, 0(0B) LOS objects, 49% free, 9279KB/18MB, paused 37us,31us total 39.220ms
+12-17 17:23:55.953 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Resetting ReactInstance ptr
+12-17 17:23:55.954 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Destroying ReactInstance
+12-17 17:23:55.956 28071 28699 E unknown:ReactNative: Tried to remove non-existent frame callback
+12-17 17:23:55.958 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.958 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.958 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.959 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.960 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.960 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.960 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.960 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.961 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.961 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.961 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.961 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.961 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.961 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.961 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.962 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.962 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.962 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.962 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.962 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.962 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.962 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.963 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.963 28071 28699 W unknown:ReactNative: Tried to enqueue runnable on already finished thread: 'v_native... dropping Runnable.
+12-17 17:23:55.965 28071 28071 W IInputConnectionWrapper: requestCursorAnchorInfo on inactive InputConnection
+12-17 17:23:56.016 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Resetting start task ref
+12-17 17:23:56.016 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask()
+12-17 17:23:56.016 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Start
+12-17 17:23:56.017 28071 28699 D Detox.RNMarker: REACT_BRIDGELESS_LOADING_START (null)
+12-17 17:23:56.017 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getJSBundleLoader()
+12-17 17:23:56.017 28071 28699 W unknown:BridgelessReact: ReactHost{0}.isMetroRunning()
+12-17 17:23:56.025 28071 28706 W unknown:BridgelessReact: ReactHost{0}.isMetroRunning(): Async result = true
+12-17 17:23:56.026 28071 28699 W unknown:BridgelessReact: ReactHost{0}.loadJSBundleFromMetro()
+12-17 17:23:56.026 28071 28699 D Detox.RNMarker: DOWNLOAD_START (null)
+12-17 17:23:56.366 28071 28706 D Detox.RNMarker: DOWNLOAD_END ({"url":"http:\/\/localhost:8081\/index.bundle?platform=android&dev=true&lazy=true&minify=false&app=com.detoxtest&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server","filesChangedCount":0})
+12-17 17:23:56.366 28071 28706 W unknown:BridgelessReact: ReactHost{0}.loadJSBundleFromMetro(): Creating BundleLoader
+12-17 17:23:56.367 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactContext(): Creating BridgelessReactContext
+12-17 17:23:56.367 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Creating ReactInstance
+12-17 17:23:56.369 28071 28699 W unknown:ReactNative: Inspector connection already open, nooping.
+12-17 17:23:56.411 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Loading JS Bundle
+12-17 17:23:56.411 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Calling DevSupportManagerBase.onNewReactContextCreated(reactContext)
+12-17 17:23:56.411 28071 29387 D Detox.RNMarker: RUN_JS_BUNDLE_START (/index.bundle?platform=android&dev=true&lazy=true&minify=false&app=com.detoxtest&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server)
+12-17 17:23:56.412 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Restarting previously running React Native Surfaces
+12-17 17:23:56.413 28071 28699 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReloadTask(): Resetting reload task ref
+12-17 17:23:56.413 28071 28071 W unknown:ReactNative: Packager connection already open, nooping.
+12-17 17:23:56.414 28071 28071 W unknown:BridgelessReact: ReactContext.onHostResume()
+12-17 17:23:56.414 28071 28071 W unknown:BridgelessReact: ReactHost{0}.getOrCreateReactInstanceTask(): Executing ReactInstanceEventListeners
+12-17 17:23:56.414 28071 28071 I DetoxRNLoading: Got new RN-context through listener
+12-17 17:23:56.415 28071 28562 I DetoxRNIdleRes: Setting up Espresso Idling Resources for React Native
+12-17 17:23:56.418 28071 28071 D DetoxRNHelpers: Native RN module resolution (class com.reactnativecommunity.asyncstorage.AsyncStorageModule): no registered module found
+12-17 17:23:56.419 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.uimodule.fabric.FabricUIManagerIdlingResources@680de50]
+12-17 17:23:56.419 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.animations.AnimatedModuleIdlingResource@a7b3849]
+12-17 17:23:56.419 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.timers.FabricTimersIdlingResource@313654e]
+12-17 17:23:56.419 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.network.NetworkIdlingResource@74166f]
+12-17 17:23:56.419 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.StabilizedIdlingResource@91d8f7c]
+12-17 17:23:56.420 28071 28071 D DetoxRNHelpers: Native RN module resolution (class com.reactnativecommunity.asyncstorage.AsyncStorageModule): no registered module found
+12-17 17:23:56.420 28071 28562 I DetoxWSClient: Sending out action 'ready' (ID #-1000)
+12-17 17:23:56.421 28071 28562 I DetoxDispatcher: Done with action 'reactNativeReload'
+12-17 17:23:56.426 28071 28581 D DetoxWSClient: Received action 'invoke' (ID #47, params={"target":{"type":"Class","value":"com.wix.detox.espresso.EspressoDetox"},"method":"setSynchronization","args":[{"type":"boolean","value":false}]})
+12-17 17:23:56.427 28071 28562 I DetoxDispatcher: Handling action 'invoke' (ID #47)...
+12-17 17:23:56.427 28071 28562 D Detox   : class com.wix.detox.espresso.EspressoDetox, setSynchronization, [false]
+12-17 17:23:56.427 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.timers.FabricTimersIdlingResource@313654e]
+12-17 17:23:56.428 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.StabilizedIdlingResource@91d8f7c]
+12-17 17:23:56.428 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.uimodule.fabric.FabricUIManagerIdlingResources@680de50]
+12-17 17:23:56.428 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.animations.AnimatedModuleIdlingResource@a7b3849]
+12-17 17:23:56.428 28071 28562 D IdlingRegistry: Unregistering idling resources: [com.wix.detox.reactnative.idlingresources.network.NetworkIdlingResource@74166f]
+12-17 17:23:56.428 28071 28562 I DetoxWSClient: Sending out action 'invokeResult' (ID #47)
+12-17 17:23:56.428 28071 28562 I DetoxDispatcher: Done with action 'invoke'
+12-17 17:23:56.798 28071 29387 W [RNScreens]: InsetObserverProxy registers on new context while it has not been invalidated on the old one. Please report this as issue at https://github.com/software-mansion/react-native-screens/issues
+12-17 17:23:56.799 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaProviderManager
+12-17 17:23:56.801 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.uimanager.LayoutShadowNode
+12-17 17:23:56.802 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.SearchBarManager
+12-17 17:23:56.803 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenFooterManager
+12-17 17:23:56.804 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.tabs.TabScreenViewManager
+12-17 17:23:56.804 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContainerViewManager
+12-17 17:23:56.805 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.gamma.tabs.TabsHostViewManager
+12-17 17:23:56.806 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ModalScreenViewManager
+12-17 17:23:56.807 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderConfigViewManager
+12-17 17:23:56.807 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenContentWrapperManager
+12-17 17:23:56.808 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewManager
+12-17 17:23:56.809 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.th3rdwave.safeareacontext.SafeAreaViewShadowNode
+12-17 17:23:56.810 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.safearea.SafeAreaViewManager
+12-17 17:23:56.810 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.safearea.paper.SafeAreaViewShadowNode
+12-17 17:23:56.811 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenViewManager
+12-17 17:23:56.811 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackHeaderSubviewManager
+12-17 17:23:56.811 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.rnscreens.ScreenStackViewManager
+12-17 17:23:56.866 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.debuggingoverlay.DebuggingOverlayManager
+12-17 17:23:56.870 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerButtonViewManager
+12-17 17:23:56.875 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewManager
+12-17 17:23:56.875 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.safeareaview.ReactSafeAreaViewShadowNode
+12-17 17:23:56.879 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.modal.ReactModalHostManager
+12-17 17:23:56.884 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageViewManager
+12-17 17:23:56.884 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.frescosupport.FrescoBasedReactTextInlineImageShadowNode
+12-17 17:23:56.889 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ReactProgressBarViewManager
+12-17 17:23:56.889 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.progressbar.ProgressBarShadowNode
+12-17 17:23:56.894 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollViewManager
+12-17 17:23:56.899 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.image.ReactImageManager
+12-17 17:23:56.905 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextViewManager
+12-17 17:23:56.906 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactTextShadowNode
+12-17 17:23:56.911 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactHorizontalScrollContainerViewManager
+12-17 17:23:56.916 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.unimplementedview.ReactUnimplementedViewManager
+12-17 17:23:56.920 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.scroll.ReactScrollViewManager
+12-17 17:23:56.926 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.view.ReactViewManager
+12-17 17:23:56.931 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.drawer.ReactDrawerLayoutManager
+12-17 17:23:56.937 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchManager
+12-17 17:23:56.939 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.switchview.ReactSwitchShadowNode
+12-17 17:23:56.944 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextViewManager
+12-17 17:23:56.944 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactVirtualTextShadowNode
+12-17 17:23:56.949 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.swiperefresh.SwipeRefreshLayoutManager
+12-17 17:23:56.954 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextManager
+12-17 17:23:56.954 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.text.ReactRawTextShadowNode
+12-17 17:23:56.955 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputManager
+12-17 17:23:56.956 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.facebook.react.views.textinput.ReactTextInputShadowNode
+12-17 17:23:56.962 28071 29387 W unknown:ViewManagerPropertyUpdater: Could not find generated setter for class com.swmansion.gesturehandler.react.RNGestureHandlerRootViewManager
+12-17 17:23:57.093 28071 29387 D Detox.RNMarker: RUN_JS_BUNDLE_END (/index.bundle?platform=android&dev=true&lazy=true&minify=false&app=com.detoxtest&modulesOnly=false&runModule=true&excludeSource=true&sourcePaths=url-server)
+12-17 17:23:57.096 28071 29387 I ReactNativeJS: Running "DetoxTest" with {"rootTag":71,"initialProps":{},"fabric":true}
+12-17 17:23:57.619 28071 29387 I ReactNativeJS: Store rehydrated successfully
+12-17 17:23:57.636 28071 29164 I OpenGLRenderer: Davey! duration=9223300452712ms; Flags=0, FrameTimelineVsyncId=2217605, IntendedVsync=71584142432013, Vsync=71584142432013, InputEventId=0, HandleInputStart=71584143200016, AnimationStart=71584143201161, PerformTraversalsStart=71584147973714, DrawStart=71584149747777, FrameDeadline=71584158098679, FrameInterval=71584143196370, FrameStartTime=8333333, SyncQueued=71584150666787, SyncStart=71584150908037, IssueDrawCommandsStart=71584151092204, SwapBuffers=71584152424444, FrameCompleted=9223372036854775807, DequeueBufferDuration=45521, QueueBufferDuration=1138281, GpuCompleted=9223372036854775807, SwapBuffersCompleted=71584154479079, DisplayPresentTime=0, 
+12-17 17:23:58.201 28071 28071 I ReactNative: [GESTURE HANDLER] Initialize gesture handler for root view com.facebook.react.runtime.ReactSurfaceView{1faa882 V.E...... ......ID 0,0-2225,1020 #47}
+12-17 17:23:58.252 28071 28081 I OpenGLRenderer: Davey! duration=9223300452128ms; Flags=0, FrameTimelineVsyncId=2217679, IntendedVsync=71584726645902, Vsync=71584726645902, InputEventId=0, HandleInputStart=71584728004918, AnimationStart=71584728006584, PerformTraversalsStart=71584759096483, DrawStart=71584766918567, FrameDeadline=71584750645901, FrameInterval=71584728001688, FrameStartTime=8333333, SyncQueued=71584770903672, SyncStart=71584771015651, IssueDrawCommandsStart=71584771370130, SwapBuffers=71584773258828, FrameCompleted=9223372036854775807, DequeueBufferDuration=32239, QueueBufferDuration=564375, GpuCompleted=9223372036854775807, SwapBuffersCompleted=71584774400235, DisplayPresentTime=0, 
+12-17 17:23:58.323 28071 29387 D Detox.RNMarker: REACT_BRIDGELESS_LOADING_END (null)
+12-17 17:23:59.437 28071 28581 D DetoxWSClient: Received action 'invoke' (ID #48, params={"target":{"type":"Class","value":"com.wix.detox.espresso.EspressoDetox"},"method":"setSynchronization","args":[{"type":"boolean","value":true}]})
+12-17 17:23:59.439 28071 28562 I DetoxDispatcher: Handling action 'invoke' (ID #48)...
+12-17 17:23:59.440 28071 28562 D Detox   : class com.wix.detox.espresso.EspressoDetox, setSynchronization, [true]
+12-17 17:23:59.444 28071 28562 I DetoxRNIdleRes: Setting up Espresso Idling Resources for React Native
+12-17 17:23:59.460 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.uimodule.fabric.FabricUIManagerIdlingResources@5569e4c]
+12-17 17:23:59.460 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.animations.AnimatedModuleIdlingResource@4e4be95]
+12-17 17:23:59.460 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.timers.FabricTimersIdlingResource@3b4bbaa]
+12-17 17:23:59.460 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.network.NetworkIdlingResource@49de39b]
+12-17 17:23:59.460 28071 28562 D IdlingRegistry: Registering idling resources: [com.wix.detox.reactnative.idlingresources.StabilizedIdlingResource@7755338]
+12-17 17:23:59.471 28071 28562 I DetoxWSClient: Sending out action 'invokeResult' (ID #48)
+12-17 17:23:59.472 28071 28562 I DetoxDispatcher: Done with action 'invoke'
+12-17 17:23:59.479 28071 28581 D DetoxWSClient: Received action 'invoke' (ID #49, params={"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxAssertion"},"method":"waitForAssertMatcher","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"androidx.test.espresso.Espresso"},"method":"onView","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForTestId","args":["login-root",{"type":"boolean","value":false}]}}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForSufficientlyVisible","args":[{"type":"Integer","value":75}]}},{"type":"Double","value":10}]})
+12-17 17:23:59.481 28071 28562 I DetoxDispatcher: Handling action 'invoke' (ID #49)...
+12-17 17:23:59.482 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForTestId, [login-root, false]
+12-17 17:23:59.484 28071 28562 D Detox   : class androidx.test.espresso.Espresso, onView, [(view.getTag() is "login-root" and view has effective visibility <VISIBLE>)]
+12-17 17:23:59.486 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForSufficientlyVisible, [75]
+12-17 17:23:59.487 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxAssertion, waitForAssertMatcher, [androidx.test.espresso.ViewInteraction@19faf11, (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area), 10.0]
+12-17 17:24:00.242 28071 28071 W UiControllerImpl: Waiting for: DYNAMIC_TASKS_HAVE_IDLED for 100 iterations.
+12-17 17:24:01.067 28071 28071 W UiControllerImpl: Waiting for: DYNAMIC_TASKS_HAVE_IDLED for 200 iterations.
+12-17 17:24:01.868 28071 28071 W UiControllerImpl: Waiting for: DYNAMIC_TASKS_HAVE_IDLED for 300 iterations.
+12-17 17:24:02.668 28071 28071 W UiControllerImpl: Waiting for: DYNAMIC_TASKS_HAVE_IDLED for 400 iterations.
+12-17 17:24:03.485 28071 28071 W UiControllerImpl: Waiting for: DYNAMIC_TASKS_HAVE_IDLED for 500 iterations.
+12-17 17:24:04.300 28071 28071 W UiControllerImpl: Waiting for: DYNAMIC_TASKS_HAVE_IDLED for 600 iterations.
+12-17 17:24:04.511 28071 28071 I ViewInteraction: Checking 'MatchesViewAssertion(Detox){viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)}' assertion on view (view.getTag() is "login-root" and view has effective visibility <VISIBLE>)
+12-17 17:24:04.526 28071 28562 I DetoxWSClient: Sending out action 'invokeResult' (ID #49)
+12-17 17:24:04.527 28071 28562 I DetoxDispatcher: Done with action 'invoke'
+12-17 17:24:04.538 28071 28581 D DetoxWSClient: Received action 'invoke' (ID #50, params={"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxAssertion"},"method":"waitForAssertMatcher","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"androidx.test.espresso.Espresso"},"method":"onView","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForText","args":["Welcome Back",{"type":"boolean","value":false}]}}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForSufficientlyVisible","args":[{"type":"Integer","value":75}]}},{"type":"Double","value":10}]})
+12-17 17:24:04.541 28071 28562 I DetoxDispatcher: Handling action 'invoke' (ID #50)...
+12-17 17:24:04.543 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForText, [Welcome Back, false]
+12-17 17:24:04.546 28071 28562 D Detox   : class androidx.test.espresso.Espresso, onView, [(an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Welcome Back" and view has effective visibility <VISIBLE>)]
+12-17 17:24:04.550 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForSufficientlyVisible, [75]
+12-17 17:24:04.553 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxAssertion, waitForAssertMatcher, [androidx.test.espresso.ViewInteraction@6135150, (view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area), 10.0]
+12-17 17:24:04.577 28071 28071 I ViewInteraction: Checking 'MatchesViewAssertion(Detox){viewMatcher=(view has effective visibility <VISIBLE> and view.getGlobalVisibleRect() covers at least <75> percent of the view's area)}' assertion on view (an instance of android.widget.TextView and view.getText() with or without transformation to match: is "Welcome Back" and view has effective visibility <VISIBLE>)
+12-17 17:24:04.588 28071 28562 I DetoxWSClient: Sending out action 'invokeResult' (ID #50)
+12-17 17:24:04.588 28071 28562 I DetoxDispatcher: Done with action 'invoke'
+12-17 17:24:04.595 28071 28581 D DetoxWSClient: Received action 'invoke' (ID #51, params={"target":{"type":"Class","value":"com.wix.detox.espresso.EspressoDetox"},"method":"perform","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForTestId","args":["email-input",{"type":"boolean","value":false}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"androidx.test.espresso.action.ViewActions"},"method":"clearText","args":[]}}]})
+12-17 17:24:04.596 28071 28562 I DetoxDispatcher: Handling action 'invoke' (ID #51)...
+12-17 17:24:04.597 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForTestId, [email-input, false]
+12-17 17:24:04.598 28071 28562 D Detox   : class androidx.test.espresso.action.ViewActions, clearText, []
+12-17 17:24:04.599 28071 28562 D Detox   : class com.wix.detox.espresso.EspressoDetox, perform, [(view.getTag() is "email-input" and view has effective visibility <VISIBLE>), androidx.test.espresso.action.ReplaceTextAction@673656f]
+12-17 17:24:04.617 28071 28071 I ViewInteraction: Performing 'replace text()' action on view (view.getTag() is "email-input" and view has effective visibility <VISIBLE>)
+12-17 17:24:04.629 28071 28562 I DetoxWSClient: Sending out action 'invokeResult' (ID #51)
+12-17 17:24:04.630 28071 28562 I DetoxDispatcher: Done with action 'invoke'
+12-17 17:24:04.638 28071 28581 D DetoxWSClient: Received action 'invoke' (ID #52, params={"target":{"type":"Class","value":"com.wix.detox.espresso.EspressoDetox"},"method":"perform","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForTestId","args":["password-input",{"type":"boolean","value":false}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"androidx.test.espresso.action.ViewActions"},"method":"clearText","args":[]}}]})
+12-17 17:24:04.639 28071 28562 I DetoxDispatcher: Handling action 'invoke' (ID #52)...
+12-17 17:24:04.640 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForTestId, [password-input, false]
+12-17 17:24:04.641 28071 28562 D Detox   : class androidx.test.espresso.action.ViewActions, clearText, []
+12-17 17:24:04.641 28071 28562 D Detox   : class com.wix.detox.espresso.EspressoDetox, perform, [(view.getTag() is "password-input" and view has effective visibility <VISIBLE>), androidx.test.espresso.action.ReplaceTextAction@91303b2]
+12-17 17:24:04.645 28071 28718 I OpenGLRenderer: Davey! duration=9223300445710ms; Flags=0, FrameTimelineVsyncId=2218480, IntendedVsync=71591144257545, Vsync=71591152590878, InputEventId=0, HandleInputStart=71591157193214, AnimationStart=71591157198579, PerformTraversalsStart=71591157615089, DrawStart=71591159230402, FrameDeadline=71591168257544, FrameInterval=71591157182954, FrameStartTime=8333333, SyncQueued=71591160667069, SyncStart=71591160773736, IssueDrawCommandsStart=71591161106548, SwapBuffers=71591163370663, FrameCompleted=9223372036854775807, DequeueBufferDuration=44166, QueueBufferDuration=1076198, GpuCompleted=9223372036854775807, SwapBuffersCompleted=71591165053736, DisplayPresentTime=0, 
+12-17 17:24:04.653 28071 28071 I ViewInteraction: Performing 'replace text()' action on view (view.getTag() is "password-input" and view has effective visibility <VISIBLE>)
+12-17 17:24:04.661 28071 28562 I DetoxWSClient: Sending out action 'invokeResult' (ID #52)
+12-17 17:24:04.662 28071 28562 I DetoxDispatcher: Done with action 'invoke'
+12-17 17:24:04.672 28071 28581 D DetoxWSClient: Received action 'invoke' (ID #53, params={"target":{"type":"Class","value":"com.wix.detox.espresso.EspressoDetox"},"method":"perform","args":[{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxMatcher"},"method":"matcherForTestId","args":["email-input",{"type":"boolean","value":false}]}},{"type":"Invocation","value":{"target":{"type":"Class","value":"com.wix.detox.espresso.DetoxViewActions"},"method":"typeText","args":["wrong0@email.com"]}}]})
+12-17 17:24:04.673 28071 28562 I DetoxDispatcher: Handling action 'invoke' (ID #53)...
+12-17 17:24:04.673 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxMatcher, matcherForTestId, [email-input, false]
+12-17 17:24:04.673 28071 28562 D Detox   : class com.wix.detox.espresso.DetoxViewActions, typeText, [wrong0@email.com]
+12-17 17:24:04.674 28071 28562 D Detox   : class com.wix.detox.espresso.EspressoDetox, perform, [(view.getTag() is "email-input" and view has effective visibility <VISIBLE>), com.wix.detox.espresso.action.DetoxTypeTextAction@cdacd98]
+12-17 17:24:04.679 28071 28071 I ViewInteraction: Performing 'Click to focus & type text (wrong0@email.com)' action on view (view.getTag() is "email-input" and view has effective visibility <VISIBLE>)
+12-17 17:24:04.724 28071 28071 D InputMethodManager: showSoftInput() view=com.facebook.react.views.textinput.ReactEditText{a5fb9ec VFED..CL. .F.P..ID 62,614-2165,770 #2c aid=1073741899} flags=0 reason=SHOW_SOFT_INPUT
+12-17 17:24:04.733 28071 28071 I AssistStructure: Flattened final assist data: 2596 bytes, containing 1 windows, 13 views
+12-17 17:24:04.742 28071 28071 D InputMethodManager: showSoftInput() view=com.facebook.react.views.textinput.ReactEditText{a5fb9ec VFED..CL. .F.P.... 62,614-2165,770 #2c aid=1073741899} flags=0 reason=SHOW_SOFT_INPUT
+12-17 17:24:04.801 28071 28071 D InsetsController: show(ime(), fromIme=true)
+12-17 17:24:04.806 28071 28071 D InsetsController: show(ime(), fromIme=true)
+12-17 17:24:05.125 28071 28071 D UiControllerImpl: Injecting string: "wrong0@email.com"
+12-17 17:24:05.187 28071 28718 I OpenGLRenderer: Davey! duration=9223300445159ms; Flags=0, FrameTimelineVsyncId=2218629, IntendedVsync=71591694509847, Vsync=71591694509847, InputEventId=0, HandleInputStart=71591699921081, AnimationStart=71591699922487, PerformTraversalsStart=71591704866498, DrawStart=71591705265925, FrameDeadline=71591718509846, FrameInterval=71591699916393, FrameStartTime=8333333, SyncQueued=71591705612696, SyncStart=71591706615873, IssueDrawCommandsStart=71591706860509, SwapBuffers=71591708461759, FrameCompleted=9223372036854775807, DequeueBufferDuration=20729, QueueBufferDuration=1021927, GpuCompleted=9223372036854775807, SwapBuffersCompleted=71591709957644, DisplayPresentTime=0, 
+12-17 17:24:05.764 28071 28071 W unknown:BridgelessReact: ReactHost{0}.onUserLeaveHint(activity)
+12-17 17:24:05.766 28071 28071 W unknown:BridgelessReact: ReactHost{0}.onHostPause(activity)
+12-17 17:24:05.775 28071 28071 W unknown:BridgelessReact: ReactContext.onHostPause()
+12-17 17:24:05.777 28071 28071 D LifecycleMonitor: Lifecycle status change: com.detoxtest.MainActivity@f8ca986 in: PAUSED
+--------- beginning of system
+12-17 17:24:05.788 28071 28071 W ViewRootImpl[MainActivity]: Cancelling event (no window focus):KeyEvent { action=ACTION_UP, keyCode=KEYCODE_A, scanCode=0, metaState=0, flags=0x28, repeatCount=0, eventTime=71592312, downTime=71591652, deviceId=-1, source=0x101, displayId=-1 }
+12-17 17:24:05.788 28071 28071 W ViewRootImpl[MainActivity]: Cancelling event (no window focus):KeyEvent { action=ACTION_UP, keyCode=KEYCODE_A, scanCode=0, metaState=0, flags=0x28, repeatCount=0, eventTime=71592312, downTime=71591652, deviceId=-1, source=0x101, displayId=-1 }
+12-17 17:24:05.788 28071 28071 W ViewRootImpl[MainActivity]: Cancelling event (no window focus):KeyEvent { action=ACTION_UP, keyCode=KEYCODE_A, scanCode=0, metaState=0, flags=0x28, repeatCount=0, eventTime=71592312, downTime=71591652, deviceId=-1, source=0x101, displayId=-1 }
+12-17 17:24:05.788 28071 28071 W ViewRootImpl[MainActivity]: Cancelling event (no window focus):KeyEvent { action=ACTION_UP, keyCode=KEYCODE_A, scanCode=0, metaState=0, flags=0x28, repeatCount=0, eventTime=71592312, downTime=71591652, deviceId=-1, source=0x101, displayId=-1 }
+12-17 17:24:05.788 28071 28071 W ViewRootImpl[MainActivity]: Cancelling event (no window focus):KeyEvent { action=ACTION_UP, keyCode=KEYCODE_A, scanCode=0, metaState=0, flags=0x28, repeatCount=0, eventTime=71592312, downTime=71591652, deviceId=-1, source=0x101, displayId=-1 }
+12-17 17:24:05.788 28071 28071 W ViewRootImpl[MainActivity]: Cancelling event (no window focus):KeyEvent { action=ACTION_UP, keyCode=KEYCODE_A, scanCode=0, metaState=0, flags=0x28, repeatCount=0, eventTime=71592312, downTime=71591652, deviceId=-1, source=0x101, displayId=-1 }
+12-17 17:24:05.921 28071 28071 E TypeTextAction: Failed to type text: wrong0@email.com
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: Test exception
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: java.lang.reflect.InvocationTargetException
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at java.lang.reflect.Method.invoke(Native Method)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(MethodUtils.java:443)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at org.apache.commons.lang3.reflect.MethodUtils.invokeStaticMethod(MethodUtils.java:405)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.invoke.types.ClassTarget.execute(ClassTarget.java:23)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.invoke.types.Target.invoke(Target.java:59)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:35)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:26)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.invoke.MethodInvocation.invoke(MethodInvocation.java:20)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.InvokeActionHandler.handle(DetoxActionHandlers.kt:54)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor.executeAction$lambda$2$lambda$1(DetoxActionsDispatcher.kt:76)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor.$r8$lambda$GVbB7LHtBHxNHGbgYnHJ6YrwCqs(Unknown Source:0)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor$$ExternalSyntheticLambda0.run(D8$$SyntheticClass:0)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.os.Handler.handleCallback(Handler.java:978)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.os.Handler.dispatchMessage(Handler.java:104)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.os.Looper.loopOnce(Looper.java:238)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.os.Looper.loop(Looper.java:357)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor._init_$lambda$0(DetoxActionsDispatcher.kt:62)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor.$r8$lambda$xlgL0CQim6vNM0wWEqM8JIDgZUE(Unknown Source:0)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.adapters.server.ActionsExecutor$$ExternalSyntheticLambda1.run(D8$$SyntheticClass:0)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at java.lang.Thread.run(Thread.java:1119)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: Caused by: androidx.test.espresso.PerformException: Error performing 'type text(wrong0@email.com)' on view 'ReactEditText{id=44, desc=Email input field, visibility=VISIBLE, width=2103, height=156, has-focus=true, has-focusable=true, has-window-focus=false, is-clickable=true, is-enabled=true, is-focused=true, is-focusable=true, is-layout-requested=false, is-selected=false, layout-params=android.view.ViewGroup$LayoutParams@YYYYYY, tag=email-input, root-is-layout-requested=false, has-input-connection=true, editor-info=[inputType=0x80021 imeOptions=0x8000006 privateImeOptions=null actionLabel=null actionId=0 initialSelStart=10 initialSelEnd=10 initialCapsMode=0x0 hintText=Enter your email label=null packageName=null autofillId=null fieldId=0 fieldName=null extras=Bundle[{android.support.text.emoji.emojiCompat_metadataVersion=11, android.support.text.emoji.emojiCompat_replaceAll=false}] hintLocales=null contentMimeTypes=null ], x=62.0, y=614.0, text=wrong0@ema, hint=Enter your email, input-type=524321, ime-target=true, has-links=false}'.
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.PerformException$Builder.build(PerformException.java:86)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.action.TypeTextAction.perform(TypeTextAction.java:143)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.espresso.action.DetoxTypeTextAction.perform(DetoxTypeTextAction.java:37)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction$SingleExecutionViewAction.perform(ViewInteraction.java:429)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction.doPerform(ViewInteraction.java:297)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction.access$300(ViewInteraction.java:70)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:193)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.ViewInteraction$1.call(ViewInteraction.java:182)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.os.Handler.handleCallback(Handler.java:978)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.os.Handler.dispatchMessage(Handler.java:104)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.os.Looper.loopOnce(Looper.java:238)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.os.Looper.loop(Looper.java:357)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at android.app.ActivityThread.main(ActivityThread.java:8090)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at java.lang.reflect.Method.invoke(Native Method)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.android.internal.os.RuntimeInit$MethodAndArgsCaller.run(RuntimeInit.java:548)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: 	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:1026)
+12-17 17:24:05.977 28071 28562 I DetoxActionHandlers: Caused by: androidx.test.espresso.InjectEventSecurityException: java.lang.SecurityException: Injecting to another application requires INJECT_EVENTS permission
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.base.InputManagerEventInjectionStrategy.injectKeyEvent(InputManagerEventInjectionStrategy.java:116)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.lang.reflect.Method.invoke(Native Method)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at com.wix.detox.common.proxy.SpyingInvocationHandler.invoke(SpyingInvocationHandler.kt:13)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.lang.reflect.Proxy.invoke(Proxy.java:1006)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.base.$Proxy6.injectKeyEvent(Unknown Source)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.base.EventInjector.injectKeyEvent(EventInjector.java:70)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.base.UiControllerImpl$2.call(UiControllerImpl.java:191)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.base.UiControllerImpl$2.call(UiControllerImpl.java:188)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:524)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.util.concurrent.FutureTask.run(FutureTask.java:317)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1156)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:651)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.lang.Thread.run(Thread.java:1119)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: Caused by: java.lang.SecurityException: Injecting to another application requires INJECT_EVENTS permission
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.os.Parcel.createExceptionOrNull(Parcel.java:2426)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.os.Parcel.createException(Parcel.java:2410)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.os.Parcel.readException(Parcel.java:2393)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.os.Parcel.readException(Parcel.java:2335)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.hardware.input.IInputManager$Stub$Proxy.injectInputEvent(IInputManager.java:1504)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.hardware.input.InputManager.injectInputEvent(InputManager.java:1101)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at java.lang.reflect.Method.invoke(Native Method)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at androidx.test.espresso.base.InputManagerEventInjectionStrategy.injectKeyEvent(InputManagerEventInjectionStrategy.java:110)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	... 13 more
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: Caused by: android.os.RemoteException: Remote stack trace:
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at com.android.server.input.InputManagerService.injectInputEventInternal(InputManagerService.java:962)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at com.android.server.input.InputManagerService.injectInputEvent(InputManagerService.java:914)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.hardware.input.IInputManager$Stub.onTransact(IInputManager.java:644)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.os.Binder.execTransactInternal(Binder.java:1192)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 	at android.os.Binder.execTransact(Binder.java:1151)
+12-17 17:24:05.979 28071 28562 I DetoxActionHandlers: 
+12-17 17:24:05.979 28071 28562 I DetoxWSClient: Sending out action 'testFailed' (ID #53)
+12-17 17:24:05.980 28071 28562 I DetoxDispatcher: Done with action 'invoke'
+12-17 17:24:06.296 28071 28071 D LifecycleMonitor: Lifecycle status change: com.detoxtest.MainActivity@f8ca986 in: STOPPED
+12-17 17:24:07.546 28071 28071 W unknown:BridgelessReact: ReactHost{0}.stopSurface(surfaceId = 71): Schedule
+12-17 17:24:07.546 28071 28071 W unknown:BridgelessReact: ReactHost{0}.detachSurface(surfaceId = 71)
+12-17 17:24:07.546 28071 28699 W unknown:BridgelessReact: ReactHost{0}.stopSurface(surfaceId = 71): Execute
+12-17 17:24:07.547 28071 28699 E unknown:SurfaceMountingManager: Stopping surface [71]
+12-17 17:24:07.549 28071 28071 W unknown:BridgelessReact: ReactHost{0}.onHostDestroy(activity)
+12-17 17:24:07.549 28071 28071 W unknown:BridgelessReact: ReactContext.onHostDestroy()
+12-17 17:24:07.550 28071 28071 E unknown:ReactNative: Tried to remove non-existent frame callback
+12-17 17:24:07.550 28071 28071 D LifecycleMonitor: Lifecycle status change: com.detoxtest.MainActivity@f8ca986 in: DESTROYED
+12-17 17:24:07.559 28071 28071 I ReactNative: [GESTURE HANDLER] Tearing down gesture handler registered for root view com.facebook.react.runtime.ReactSurfaceView{1faa882 V.E...... .......D 0,0-2225,1020 #47}
+12-17 17:24:07.559 28071 28071 E unknown:SurfaceMountingManager: Surface [71] was stopped on SurfaceMountingManager.
+12-17 17:24:07.571 28071 29388 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is null.
+12-17 17:24:07.571 28071 29388 W unknown:ReactNative: StatusBarModule: Ignored status bar change, current activity is null.

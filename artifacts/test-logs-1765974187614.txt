@@ -1,0 +1,16 @@
+[LOG] 2025-12-17T12:23:07.614Z: 🚀 Test suite starting...
+[LOG] 2025-12-17T12:23:22.780Z:  Waiting 3 seconds for PersistGate + Redux loading...
+[LOG] 2025-12-17T12:23:30.930Z:  Login screen ready
+[LOG] 2025-12-17T12:23:30.931Z:  Entering login credentials...
+[LOG] 2025-12-17T12:23:35.489Z:  Login button tapped, waiting for navigation...
+[LOG] 2025-12-17T12:23:41.638Z: ✏️ Testing inline name editing: John Doe → Purvi
+[LOG] 2025-12-17T12:23:43.299Z: ✅ Current name "John Doe" confirmed
+[LOG] 2025-12-17T12:23:43.344Z: ✅ Quick Edit button found in profile header
+[LOG] 2025-12-17T12:23:43.956Z: 🔘 Tapped inline edit button
+[LOG] 2025-12-17T12:23:45.881Z: ✅ Inline text input is visible
+[LOG] 2025-12-17T12:23:45.951Z: 📝 Entered new name: Purvi
+[LOG] 2025-12-17T12:23:49.577Z: 🔘 Tapped inline save button
+[LOG] 2025-12-17T12:23:50.555Z: ⚠️ Save button onPress was NOT called - button text still shows Save
+[LOG] 2025-12-17T12:23:54.426Z: ✅ Name "Purvi" confirmed in profile header
+[LOG] 2025-12-17T12:23:54.426Z: 🎉 SUCCESS: Name successfully changed from John Doe to Purvi!
+[LOG] 2025-12-17T12:23:55.738Z: 🏁 Test suite completed
