@@ -228,7 +228,18 @@ const LoginScreen: React.FC = () => {
                   autoCorrect={false}
                 />
                 {touched.email && errors.email && (
-                  <Text style={styles.errorText}>{errors.email}</Text>
+                  <Text
+                    testID={
+                      errors.email === 'Email is required'
+                        ? 'email-required-error'
+                        : errors.email === 'Please enter a valid email address'
+                        ? 'email-format-error'
+                        : 'email-invalid-error'
+                    }
+                    style={styles.errorText}
+                  >
+                    {errors.email}
+                  </Text>
                 )}
               </View>
 
@@ -267,14 +278,34 @@ const LoginScreen: React.FC = () => {
                   </TouchableOpacity>
                 </View>
                 {touched.password && errors.password && (
-                  <Text style={styles.errorText}>{errors.password}</Text>
+                  <Text
+                    testID={
+                      errors.password === 'Password is required'
+                        ? 'password-required-error'
+                        : 'password-validation-error'
+                    }
+                    style={styles.errorText}
+                  >
+                    {errors.password}
+                  </Text>
                 )}
               </View>
 
               {/* Global Error */}
               {error && (
                 <View style={styles.globalErrorContainer}>
-                  <Text style={styles.errorText}>{error}</Text>
+                  <Text
+                    testID={
+                      error.includes('User not found')
+                        ? 'user-not-found-error'
+                        : error.includes('Invalid email or password')
+                        ? 'invalid-credentials-error'
+                        : 'login-error-message'
+                    }
+                    style={styles.errorText}
+                  >
+                    {error}
+                  </Text>
                 </View>
               )}
 

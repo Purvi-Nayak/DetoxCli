@@ -21,9 +21,12 @@ describe('Navigation Between Core Screens', () => {
         await element(by.id('password-input')).tap();
         await element(by.id('password-input')).replaceText('Password123!');
 
-        // Dismiss keyboard (same as working test)
+        // Dismiss keyboard (platform-specific)
         if (device.getPlatform() === 'android') {
             await device.pressBack();
+        } else if (device.getPlatform() === 'ios') {
+            // iOS: Tap return key or tap outside to dismiss keyboard
+            await element(by.id('password-input')).tapReturnKey();
         }
 
         // Tap login button

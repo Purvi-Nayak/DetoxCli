@@ -1,4 +1,3 @@
-
 describe('Positive Flow - Successful Login', () => {
     beforeAll(async () => {
         await device.launchApp({ newInstance: true });
@@ -30,7 +29,13 @@ describe('Positive Flow - Successful Login', () => {
 
         // Dismiss keyboard
         if (device.getPlatform() === 'android') {
-            await device.pressBack();
+            await device.pressBack();  // This only works on Android
+        }
+
+        // For iOS, you might need different interactions
+        if (device.getPlatform() === 'ios') {
+            // iOS keyboard dismiss might be different
+            await element(by.id('email-input')).tapReturnKey();
         }
 
         // Tap login button
@@ -51,11 +56,11 @@ describe('Positive Flow - Successful Login', () => {
         }
 
         try {
-            // Check for loading indicator
-            await expect(element(by.text('Signing In...'))).not.toBeVisible();
+            // Check for loading indicator using testID instead of text
+            await expect(element(by.id('loading-indicator'))).not.toBeVisible();
             console.log('✅ Loading state is done');
         } catch (e) {
-            console.log('⚠️  Still loading or loading text not found');
+            console.log('⚠️  Still loading or loading indicator not found');
         }
 
         // Try different selectors for home screen
@@ -91,9 +96,9 @@ describe('Positive Flow - Successful Login', () => {
             console.log(' welcome-title not found');
         }
 
-        // Option 4: Try to find any text that might be on home screen
+        // Option 4: Try to find welcome text using testID
         try {
-            await waitFor(element(by.text('Welcome Home')))
+            await waitFor(element(by.id('welcome-home-text')))
                 .toBeVisible()
                 .withTimeout(5000);
             console.log(' Found "Welcome Home" text');

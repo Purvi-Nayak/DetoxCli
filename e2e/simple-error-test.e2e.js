@@ -38,8 +38,8 @@ describe('Validation Error Tests', () => {
         console.log(' Looking for "Email is required" error...');
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        // Check for validation error
-        await waitFor(element(by.text('Email is required')))
+        // Check for validation error using testID
+        await waitFor(element(by.id('email-required-error')))
             .toBeVisible()
             .withTimeout(5000);
 
@@ -62,8 +62,8 @@ describe('Validation Error Tests', () => {
         console.log(' Looking for "Password is required" error...');
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        // Check for validation error
-        await waitFor(element(by.text('Password is required')))
+        // Check for validation error using testID
+        await waitFor(element(by.id('password-required-error')))
             .toBeVisible()
             .withTimeout(5000);
 
@@ -88,8 +88,8 @@ describe('Validation Error Tests', () => {
         console.log(' Looking for invalid email format error...');
         await new Promise(resolve => setTimeout(resolve, 2000));
 
-        // Check for validation error
-        await waitFor(element(by.text('Please enter a valid email address')))
+        // Check for validation error using testID
+        await waitFor(element(by.id('email-format-error')))
             .toBeVisible()
             .withTimeout(5000);
 
@@ -104,9 +104,12 @@ describe('Validation Error Tests', () => {
         await element(by.id('password-input')).tap();
         await element(by.id('password-input')).replaceText('Password123!');
 
-        // Dismiss keyboard
+        // Dismiss keyboard (platform-specific)
         if (device.getPlatform() === 'android') {
             await device.pressBack();
+        } else if (device.getPlatform() === 'ios') {
+            // iOS: Tap return key to dismiss keyboard
+            await element(by.id('password-input')).tapReturnKey();
         }
 
         // Tap login button to submit
@@ -115,8 +118,8 @@ describe('Validation Error Tests', () => {
         console.log(' Looking for user not found error...');
         await new Promise(resolve => setTimeout(resolve, 3000));
 
-        // Check for login error (not validation error)
-        await waitFor(element(by.text('User not found. Please check your email or register first.')))
+        // Check for login error (not validation error) using testID
+        await waitFor(element(by.id('user-not-found-error')))
             .toBeVisible()
             .withTimeout(5000);
 
@@ -131,9 +134,12 @@ describe('Validation Error Tests', () => {
         await element(by.id('password-input')).tap();
         await element(by.id('password-input')).replaceText('WrongPassword123!');
 
-        // Dismiss keyboard
+        // Dismiss keyboard (platform-specific)
         if (device.getPlatform() === 'android') {
             await device.pressBack();
+        } else if (device.getPlatform() === 'ios') {
+            // iOS: Tap return key to dismiss keyboard
+            await element(by.id('password-input')).tapReturnKey();
         }
 
         // Tap login button to submit
@@ -142,8 +148,8 @@ describe('Validation Error Tests', () => {
         console.log(' Looking for invalid password error...');
         await new Promise(resolve => setTimeout(resolve, 3000));
 
-        // Check for login error
-        await waitFor(element(by.text('Invalid email or password')))
+        // Check for login error using testID
+        await waitFor(element(by.id('invalid-credentials-error')))
             .toBeVisible()
             .withTimeout(5000);
 
