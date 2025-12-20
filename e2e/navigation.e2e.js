@@ -1,3 +1,4 @@
+
 describe('Navigation Between Core Screens', () => {
     beforeAll(async () => {
         await device.launchApp({ newInstance: true });
