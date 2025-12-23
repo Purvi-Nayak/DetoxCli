@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuites name="jest tests" tests="5" failures="0" errors="0" time="136.089">
-  <testsuite name="e2e/navigation.e2e.js" errors="0" failures="0" skipped="0" timestamp="2025-12-16T10:02:58" time="135.507" tests="5">
-    <testcase classname="Navigation Between Core Screens" name="should navigate from Home to Details screen" time="14.139">
+<testsuites name="jest tests" tests="2" failures="0" errors="0" time="53.842">
+  <testsuite name="e2e/api-integration.e2e.js" errors="0" failures="0" skipped="0" timestamp="2025-12-23T11:01:44" time="53.59" tests="2">
+    <testcase classname="API Integration Tests" name="should make successful API call when Test API button is tapped" time="1.568">
     </testcase>
-    <testcase classname="Navigation Between Core Screens" name="should navigate from Details to Profile screen" time="12.7">
-    </testcase>
-    <testcase classname="Navigation Between Core Screens" name="should navigate back to Home from Profile" time="8.006">
-    </testcase>
-    <testcase classname="Navigation Between Core Screens" name="should complete full navigation cycle" time="6.999">
-    </testcase>
-    <testcase classname="Navigation Between Core Screens" name="should maintain bottom tab visibility" time="3.79">
+    <testcase classname="API Integration Tests" name="should show loading state during API call" time="3.376">
     </testcase>
   </testsuite>
 </testsuites>

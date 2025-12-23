@@ -1,0 +1,26 @@
+[LOG] 2025-12-23T09:37:23.416Z: 🚀 Test suite starting...
+[LOG] 2025-12-23T09:37:33.452Z: ⏳ Waiting for app to load...
+[LOG] 2025-12-23T09:37:41.498Z: ✅ Login screen ready
+[LOG] 2025-12-23T09:37:41.499Z: 📝 Entering login credentials...
+[LOG] 2025-12-23T09:37:46.383Z: 🔘 Login button tapped, waiting for navigation...
+[LOG] 2025-12-23T09:37:51.398Z: 🏠 Successfully logged in and on Home tab - READY FOR API TESTS
+[LOG] 2025-12-23T09:37:51.504Z: 🌐 Testing successful API call...
+[LOG] 2025-12-23T09:37:51.569Z: ✅ API test button found on Home screen
+[LOG] 2025-12-23T09:37:52.417Z: 🔘 Tapped API test button
+[LOG] 2025-12-23T09:37:52.431Z: ✅ API success state visible
+[LOG] 2025-12-23T09:37:52.471Z: 📊 API result data displayed correctly
+[LOG] 2025-12-23T09:37:52.486Z: 🎯 Verified correct API data returned
+[LOG] 2025-12-23T09:37:52.486Z: 🎉 API integration test completed successfully!
+[LOG] 2025-12-23T09:37:53.292Z: 🚫 Testing API error handling...
+[LOG] 2025-12-23T09:37:53.321Z: 📡 Network requests blocked - simulating offline
+[LOG] 2025-12-23T09:37:54.383Z: 🔘 Tapped API test button (should fail)
+[LOG] 2025-12-23T09:38:05.802Z: ⏳ Testing API loading state...
+[LOG] 2025-12-23T09:38:07.003Z: 🔘 Tapped API test button
+[LOG] 2025-12-23T09:38:08.275Z: 🔄 Testing multiple sequential API calls...
+[LOG] 2025-12-23T09:38:09.665Z: 🔘 First API call initiated
+[LOG] 2025-12-23T09:38:09.686Z: ✅ First API call completed successfully
+[LOG] 2025-12-23T09:38:11.515Z: 🔘 Second API call initiated
+[LOG] 2025-12-23T09:38:11.527Z: ✅ Second API call completed successfully
+[LOG] 2025-12-23T09:38:11.539Z: 📊 Data consistency maintained across multiple calls
+[LOG] 2025-12-23T09:38:11.540Z: 🎉 Multiple API calls test completed!
+[LOG] 2025-12-23T09:38:12.490Z: 🏁 Test suite completed

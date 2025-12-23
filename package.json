@@ -17,6 +17,7 @@
     "detox:android-validation": "detox test --configuration android.emu.debug e2e/simple-error-test.e2e.js",
     "detox:android-profile": "detox test --configuration android.emu.debug e2e/profile.e2e.js",
     "detox:android-offline": "detox test --configuration android.emu.debug e2e/edge-offline.e2e.js",
+    "detox:android-api": "detox test --configuration android.emu.debug e2e/api-integration.e2e.js",
     "detox:device-debug": "detox test --configuration android.att.debug",
     "detox:device-build": "detox build --configuration android.att.debug",
     "detox:device-login": "detox test --configuration android.att.debug e2e/login.e2e.js",
@@ -24,6 +25,7 @@
     "detox:device-validation": "detox test --configuration android.att.debug e2e/simple-error-test.e2e.js",
     "detox:device-profile": "detox test --configuration android.att.debug e2e/profile.e2e.js",
     "detox:device-offline": "detox test --configuration android.att.debug e2e/edge-offline.e2e.js",
+    "detox:device-api": "detox test --configuration android.att.debug e2e/api-integration.e2e.js",
     "detox:ios-debug": "detox test --configuration ios.sim.debug",
     "detox:ios-release": "detox test --configuration ios.sim.release",
     "detox:build-ios-debug": "detox build --configuration ios.sim.debug",
@@ -33,6 +35,7 @@
     "detox:ios-validation": "detox test --configuration ios.sim.debug e2e/simple-error-test.e2e.js",
     "detox:ios-profile": "detox test --configuration ios.sim.debug e2e/profile.e2e.js",
     "detox:ios-offline": "detox test --configuration ios.sim.debug e2e/edge-offline.e2e.js",
+    "detox:ios-api": "detox test --configuration ios.sim.debug e2e/api-integration.e2e.js",
     "detox:test-all-platforms": "npm run detox:android-debug && npm run detox:device-debug && npm run detox:ios-debug",
     "detox:login-all-platforms": "npm run detox:android-login && npm run detox:device-login && npm run detox:ios-login"
   },
